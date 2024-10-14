@@ -1,0 +1,27 @@
+{
+  "editor.defaultFormatter": "dbaeumer.vscode-eslint",
+  "editor.formatOnSave": true,
+  "editor.insertSpaces": false,
+  "editor.detectIndentation": false,
+  "files.insertFinalNewline": true,
+  "beautify.config": {
+    "end_with_newline": true,
+    "extra_liners": [],
+    "indent_with_tabs": true,
+    "indent_inner_html": false,
+    "max_preserve_newlines": 1,
+    "newline_between_rules": false,
+    "selector_separator_newline": false,
+    "space_around_combinator": true,
+    "unformatted": [
+      "script",
+      "pre"
+    ]
+  },
+  "eslint.format.enable": true,
+  "[json][jsonc]": {
+    "editor.defaultFormatter": "vscode.json-language-features",
+    "editor.insertSpaces": true,
+    "editor.tabSize": 2,
+  },
+}
