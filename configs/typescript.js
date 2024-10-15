@@ -1,6 +1,5 @@
 import stylisticTs from '@stylistic/eslint-plugin-ts';
 import parser from '@typescript-eslint/parser';
-import tsEslint from 'typescript-eslint';
 
 export const parserOptions = {
 	parser,

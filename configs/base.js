@@ -1,6 +1,6 @@
 import globals from 'globals';
 
-import symmetricNewlines from '../rules/symmetric-newlines.js';
+import customRules from '../rules/index.js';
 
 export default [
 	{
@@ -10,7 +10,9 @@ export default [
 			sourceType: 'module',
 			globals: { ...globals.browser }
 		},
-		plugins: { 'symmetric-newlines': symmetricNewlines },
+		plugins: {
+			'@gmb': customRules
+		},
 		rules: {
 			'array-bracket-spacing': [ 'warn', 'always' ],
 			'arrow-parens': [ 'warn', 'as-needed' ],
@@ -50,7 +52,7 @@ export default [
 			'space-before-function-paren': [ 'warn', 'never' ],
 			'space-in-parens': [ 'warn', 'always', { exceptions: [ 'empty' ] } ],
 			'space-infix-ops': 'warn',
-			'symmetric-newlines/symmetric-newlines': 'warn'
+			'@gmb/symmetric-newlines': 'warn'
 		}
 	}
 ];
