@@ -13,7 +13,6 @@ export { default } from 'eslint-config-gmb';
 This includes the base configuration. To extend the configuration with TypeScript or Vue rules, import the configurations and spread them into an array:
 
 ```js
-
 import base, { typescript, vue } from 'eslint-config-gmb';
 
 export default [
@@ -50,17 +49,18 @@ The Vue configuration extends the base configuration and includes additional rul
 The `symmetric-newlines` rule enforces an equal number of starting and ending newlines within blocks. This rule ensures that the number of newlines after the opening brace matches the number of newlines before the closing brace.
 
 ```js
-// Wrong
+// Invalid
 function example() {
 
 	console.log( 'Hello, world!' );
 }
 
-// Correct
+// Valid
 function example() {
 	console.log( 'Hello, world!' );
 }
 
+// Valid
 function example() {
 
 	console.log( 'Hello, world!' );
