@@ -2,6 +2,15 @@
 
 **eslint-config-gmb** is an ESLint configuration created by George Michael Brower. This configuration aims to provide a comprehensive and stylistic linting setup for JavaScript, TypeScript, and Vue projects.
 
+The configuration features:
+
+- Tabbed indentation.
+- Spaces in parenthesis, brackets, and braces.
+- Import sorting by filename (members sorted alphabetically).
+- Import grouping by type (external, internal).
+- Symmetric newlines within blocks.
+
+
 ## Usage
 
 Create an `eslint.config.js` file in your project root with the following:
