@@ -1,10 +1,9 @@
 /* eslint-disable no-unused-vars */
 
-import fs from 'fs';
-import { readFile } from 'fs';
+import fs, { readFile } from 'fs';
 
-import localModule from './localModule';
-import { localFunction } from './utils';
+import localModule from './localModule.js';
+import { localFunction } from './utils.js';
 
 function myFunction( param1, param2 ) {
 
@@ -14,6 +13,7 @@ function myFunction( param1, param2 ) {
 	} else {
 		console.log( 'Parameters are not equal' );
 	}
+
 	const obj = { a: 1, b: 2 };
 	for ( let key in obj ) {
 		console.log( key, obj[ key ] );

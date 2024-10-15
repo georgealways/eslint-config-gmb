@@ -1,6 +1,6 @@
 # eslint-config-gmb
 
-**eslint-config-gmb** is a ESLint configuration created by George Michael Brower. This configuration aims to provide a comprehensive and stylistic linting setup for JavaScript, TypeScript, and Vue projects.
+**eslint-config-gmb** is an ESLint configuration created by George Michael Brower. This configuration aims to provide a comprehensive and stylistic linting setup for JavaScript, TypeScript, and Vue projects.
 
 ## Usage
 
@@ -47,7 +47,7 @@ The Vue configuration extends the base configuration and includes additional rul
 
 ### Symmetric Newlines
 
-The `symmetric-newlines` rule enforces symmetric starting and ending newlines within blocks. This rule ensures that the number of newlines after the opening brace matches the number of newlines before the closing brace.
+The `symmetric-newlines` rule enforces an equal number of starting and ending newlines within blocks. This rule ensures that the number of newlines after the opening brace matches the number of newlines before the closing brace.
 
 ```js
 // Wrong
@@ -68,66 +68,39 @@ function example() {
 }
 ```
 
-## Examples
+## Samples
 
-These examples show the output of ESLint with the `eslint-config-gmb` configuration.
+### JavaScript
 
-```html
-<template>
-  <div class="container">
-    <h1>{{ message }}</h1>
-    <button @click="handleClick">Click Me</button>
-    <ul>
-      <li v-for="item in items" :key="item.id">{{ item.name }}</li>
-    </ul>
-  </div>
-</template>
+```js
+import fs, { readFile } from 'fs';
 
-<script>
-import axios from 'axios'
-import unusedModule from './unusedModule'
-import { unusedFunction } from './utils'
+import localModule from './localModule.js';
+import { localFunction } from './utils.js';
 
-export default {
-    name: 'ExampleComponent',
-    data() {
-        return {
-            message: "Hello World"
-            items: []
-        }
-    },
-    created: function() {
-        var self = this
-        axios.get('/api/items').then(function(response){
-            self.items = response.data
-        })
-    },
-    methods: {
-        handleClick() {
-            console.log('Button clicked')
-        }
-    }
-}
-</script>
+function myFunction( param1, param2 ) {
 
-<style>
-.container {
-    background-color: #f0f0f0
-    padding: 20px
+	if ( param1 === param2 ) {
+		console.log( 'Equal' );
+	} else {
+		console.log( 'Not Equal' );
+	}
+
+	const obj = { a: 1, b: 2 };
+	for ( let key in obj ) {
+		console.log( key, obj[ key ] );
+	}
+
 }
 
-h1 {
-    color: blue
-}
+myFunction( 1, '1' );
 
-ul {
-    list-style-type: none;
-    padding: 0
-}
+const arrowFunc = ( arg1, arg2 ) => {
+	return arg1 + arg2;
+};
 
-li {
-    padding: 5px;
-    border-bottom: 1px solid #ccc
-}
-</style>
+const arrowFunc1Param = arg => {
+	let x = arg;
+	return x;
+};
 ```
