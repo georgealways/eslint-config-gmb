@@ -1,5 +1,7 @@
 import globals from 'globals';
 
+import symmetricNewlines from '../rules/symmetric-newlines.js';
+
 export default [
 	{
 		files: [ '**/*.{js,jsx,ts,tsx,vue}' ],
@@ -8,6 +10,7 @@ export default [
 			sourceType: 'module',
 			globals: { ...globals.browser }
 		},
+		plugins: { 'symmetric-newlines': symmetricNewlines },
 		rules: {
 			'array-bracket-spacing': [ 'warn', 'always' ],
 			'arrow-parens': [ 'warn', 'as-needed' ],
@@ -46,7 +49,8 @@ export default [
 			'space-before-blocks': [ 'warn', 'always' ],
 			'space-before-function-paren': [ 'warn', 'never' ],
 			'space-in-parens': [ 'warn', 'always', { exceptions: [ 'empty' ] } ],
-			'space-infix-ops': 'warn'
+			'space-infix-ops': 'warn',
+			'symmetric-newlines/symmetric-newlines': 'warn'
 		}
 	}
 ];
