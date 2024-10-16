@@ -1,15 +1,14 @@
 // Written entirely by ChatGPT o1-preview
-// TODO: I'd like the fixer to always match the ending newline count to the starting newline count.
 export default {
 	meta: {
 		type: 'layout',
 		docs: {
 			description: 'Enforce symmetric starting and ending newlines within blocks',
 			category: 'Stylistic Issues',
-			recommended: false
+			recommended: false,
 		},
 		fixable: 'whitespace',
-		schema: [] // No options for now
+		schema: [], // No options for now
 	},
 
 	create( context ) {
@@ -46,13 +45,13 @@ export default {
 							const linesToRemove = endLinesBetween - startLinesBetween;
 							const rangeToRemove = {
 								start: tokenBeforeClosing.range[ 1 ],
-								end: tokenBeforeClosing.range[ 1 ] + linesToRemove
+								end: tokenBeforeClosing.range[ 1 ] + linesToRemove,
 							};
 							fixes.push( fixer.removeRange( [ rangeToRemove.start, rangeToRemove.end ] ) );
 						}
 
 						return fixes;
-					}
+					},
 				} );
 			}
 		}
@@ -60,8 +59,8 @@ export default {
 		return {
 			BlockStatement: checkSymmetry,
 			ClassBody: checkSymmetry,
-			SwitchStatement: checkSymmetry
+			SwitchStatement: checkSymmetry,
 		};
 
-	}
+	},
 };

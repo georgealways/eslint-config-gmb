@@ -8,19 +8,20 @@ export default [
 		languageOptions: {
 			ecmaVersion: 'latest',
 			sourceType: 'module',
-			globals: { ...globals.browser }
+			globals: { ...globals.browser },
 		},
 		plugins: {
-			'@gmb': customRules
+			'@gmb': customRules,
 		},
 		rules: {
+			'@gmb/symmetric-newlines': 'warn',
 			'array-bracket-spacing': [ 'warn', 'always' ],
 			'arrow-parens': [ 'warn', 'as-needed' ],
 			'arrow-spacing': 'warn',
 			'brace-style': [ 'warn', '1tbs', { allowSingleLine: true } ],
 			'block-spacing': [ 'warn', 'always' ],
+			'comma-dangle': [ 'warn', 'always-multiline' ],
 			'comma-spacing': 'warn',
-			'comma-dangle': [ 'warn', 'never' ],
 			'computed-property-spacing': [ 'warn', 'always' ],
 			'eol-last': [ 'warn', 'always' ],
 			'eqeqeq': [ 'warn', 'always' ],
@@ -52,7 +53,6 @@ export default [
 			'space-before-function-paren': [ 'warn', 'never' ],
 			'space-in-parens': [ 'warn', 'always', { exceptions: [ 'empty' ] } ],
 			'space-infix-ops': 'warn',
-			'@gmb/symmetric-newlines': 'warn'
-		}
-	}
+		},
+	},
 ];

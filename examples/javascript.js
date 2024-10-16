@@ -2,6 +2,12 @@
 
 import fs, { readFile } from 'fs';
 
+import {
+	imports,
+	line,
+	mutli,
+} from 'fake';
+
 import localModule from './localModule.js';
 import { localFunction } from './utils.js';
 
@@ -30,4 +36,10 @@ const arrowFunc = ( arg1, arg2 ) => {
 const arrowFunc1Param = arg => {
 	let x = arg;
 	return x;
+};
+
+const obj = {
+	a: 1,
+	b: 2,
+	c: 3,
 };
