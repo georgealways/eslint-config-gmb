@@ -22,7 +22,6 @@ export default [
 			'brace-style': [ 'warn', '1tbs', { allowSingleLine: true } ],
 			'block-spacing': [ 'warn', 'always' ],
 			'comma-spacing': 'warn',
-			// 'comma-dangle': [ 'warn', 'never' ],
 			'computed-property-spacing': [ 'warn', 'always' ],
 			'eol-last': [ 'warn', 'always' ],
 			'eqeqeq': [ 'warn', 'always' ],
