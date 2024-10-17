@@ -61,6 +61,7 @@ export default {
 			ClassBody: checkSymmetry,
 			SwitchStatement: checkSymmetry,
 			ObjectExpression: checkSymmetry,
+			ArrayExpression: checkSymmetry,
 		};
 
 	}
