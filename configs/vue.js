@@ -8,17 +8,17 @@ export default [ {
 	files: [ '**/*.vue' ],
 	languageOptions: {
 		parser: vueParser,
-		parserOptions
+		parserOptions,
 	},
 	plugins: {
 		vue,
-		'vue-scoped-css': vueScopedCss
+		'vue-scoped-css': vueScopedCss,
 	},
 	rules: {
 		'no-restricted-imports': [ 'warn', {
 			patterns: [ {
 				group: [ './', '../' ],
-				messages: 'Use @ instead of relative paths.'
+				messages: 'Use @ instead of relative paths.',
 			} ]
 		} ]
 	}

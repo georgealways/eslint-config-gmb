@@ -19,7 +19,7 @@ export default [ {
 		'import/order': [ 'warn', {
 			groups: [ 'builtin', 'external', 'type', 'internal', 'parent', 'sibling', 'index' ],
 			alphabetize: { order: 'asc', caseInsensitive: true },
-			'newlines-between': 'always'
+			'newlines-between': 'always',
 		} ]
 	}
 } ];

@@ -11,13 +11,13 @@ export default {
 		fixable: 'code',
 		schema: []
 	},
-
 	create( context ) {
+
 		const sourceCode = context.getSourceCode();
 
 		function checkForTrailingComma( node, elements ) {
-			const nonNullElements = elements.filter( el => el !== null );
 
+			const nonNullElements = elements.filter( el => el !== null );
 			const elementCount = nonNullElements.length;
 
 			const isMultiline = node.loc.start.line !== node.loc.end.line;
@@ -35,6 +35,9 @@ export default {
 				return;
 			}
 
+			const hasMultilineElement = nonNullElements.some( el => el.loc.start.line !== el.loc.end.line );
+			const hasMultipleElements = elementCount > 1;
+
 			const lastToken = sourceCode.getLastToken( lastElement );
 			const nextToken = sourceCode.getTokenAfter( lastToken, {
 				includeComments: false
@@ -42,29 +45,30 @@ export default {
 
 			const hasTrailingComma = nextToken && nextToken.value === ',';
 
-			if ( elementCount <= 1 ) {
-				// For single-item collections, ensure there's no trailing comma
-				if ( hasTrailingComma ) {
-					context.report( {
-						node: lastElement,
-						message: 'Unexpected trailing comma in single-item collection.',
-						fix( fixer ) {
-							return fixer.remove( nextToken );
-						}
-					} );
-				}
-			} else {
-				// For collections with more than one item, ensure there's a trailing comma
-				if ( !hasTrailingComma ) {
-					context.report( {
-						node: lastElement,
-						message: 'Missing trailing comma.',
-						fix( fixer ) {
-							return fixer.insertTextAfter( lastToken, ',' );
-						}
-					} );
-				}
+			// For single-item collections and collections with a multiline element, ensure
+			const needsTrailing = hasMultipleElements && !hasMultilineElement;
+
+			if ( needsTrailing && !hasTrailingComma ) {
+				context.report( {
+					node: lastElement,
+					message: 'Missing trailing comma.',
+					fix( fixer ) {
+						return fixer.insertTextAfter( lastToken, ',' );
+					}
+				} );
+			} else if ( !needsTrailing && hasTrailingComma ) {
+				const message = hasMultilineElement ?
+					'Unexpected trailing comma in a collection with multiline elements.' :
+					'Unexpected trailing comma in a single-item collection.';
+				context.report( {
+					node: lastElement,
+					message,
+					fix( fixer ) {
+						return fixer.remove( nextToken );
+					}
+				} );
 			}
+
 		}
 
 		return {
@@ -75,5 +79,6 @@ export default {
 				checkForTrailingComma( node, node.elements );
 			}
 		};
+
 	}
 };

@@ -41,10 +41,14 @@ const arrowFunc1Param = arg => {
 const obj = {
 	a: 1,
 	b: 2,
-	c: 3
+	c: 3,
 };
 
 const obj2 = {
-	a: 1
-
+	a: 1,
+	b: 2,
+	c: {
+		d: 4,
+		e: 5,
+	}
 };

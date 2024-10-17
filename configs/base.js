@@ -8,21 +8,21 @@ export default [
 		languageOptions: {
 			ecmaVersion: 'latest',
 			sourceType: 'module',
-			globals: { ...globals.browser }
+			globals: { ...globals.browser },
 		},
 		plugins: {
 			'@gmb': customRules
 		},
 		rules: {
 			'@gmb/symmetric-newlines': 'warn',
-			// '@gmb/comma-dangle-single': 'warn',
+			'@gmb/comma-dangle-single': 'warn',
 			'array-bracket-spacing': [ 'warn', 'always' ],
 			'arrow-parens': [ 'warn', 'as-needed' ],
 			'arrow-spacing': 'warn',
 			'brace-style': [ 'warn', '1tbs', { allowSingleLine: true } ],
 			'block-spacing': [ 'warn', 'always' ],
 			'comma-spacing': 'warn',
-			'comma-dangle': [ 'warn', 'never' ],
+			// 'comma-dangle': [ 'warn', 'never' ],
 			'computed-property-spacing': [ 'warn', 'always' ],
 			'eol-last': [ 'warn', 'always' ],
 			'eqeqeq': [ 'warn', 'always' ],
@@ -42,7 +42,6 @@ export default [
 			'no-multiple-empty-lines': [ 'warn', { max: 1, maxBOF: 0, maxEOF: 1 } ],
 			'no-multi-spaces': 'warn',
 			'no-param-reassign': 'warn',
-			'sort-imports': [ 'warn', { ignoreDeclarationSort: true } ], // mainly handled by imports.js
 			'no-trailing-spaces': 'warn',
 			'no-var': 'warn',
 			'no-whitespace-before-property': 'warn',
@@ -50,10 +49,11 @@ export default [
 			'quotes': [ 'warn', 'single', { avoidEscape: true } ],
 			'semi-spacing': 'warn',
 			'semi': [ 'warn', 'always' ],
+			'sort-imports': [ 'warn', { ignoreDeclarationSort: true } ], // mainly handled by imports.js
 			'space-before-blocks': [ 'warn', 'always' ],
 			'space-before-function-paren': [ 'warn', 'never' ],
 			'space-in-parens': [ 'warn', 'always', { exceptions: [ 'empty' ] } ],
-			'space-infix-ops': 'warn'
+			'space-infix-ops': 'warn',
 		}
 	}
 ];

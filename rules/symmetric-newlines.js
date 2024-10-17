@@ -5,7 +5,7 @@ export default {
 		docs: {
 			description: 'Enforce symmetric starting and ending newlines within blocks',
 			category: 'Stylistic Issues',
-			recommended: false
+			recommended: false,
 		},
 		fixable: 'whitespace',
 		schema: [] // No options for now
@@ -45,7 +45,7 @@ export default {
 							const linesToRemove = endLinesBetween - startLinesBetween;
 							const rangeToRemove = {
 								start: tokenBeforeClosing.range[ 1 ],
-								end: tokenBeforeClosing.range[ 1 ] + linesToRemove
+								end: tokenBeforeClosing.range[ 1 ] + linesToRemove,
 							};
 							fixes.push( fixer.removeRange( [ rangeToRemove.start, rangeToRemove.end ] ) );
 						}
@@ -59,7 +59,8 @@ export default {
 		return {
 			BlockStatement: checkSymmetry,
 			ClassBody: checkSymmetry,
-			SwitchStatement: checkSymmetry
+			SwitchStatement: checkSymmetry,
+			ObjectExpression: checkSymmetry,
 		};
 
 	}
