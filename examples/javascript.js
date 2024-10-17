@@ -5,7 +5,7 @@ import fs, { readFile } from 'fs';
 import {
 	imports,
 	line,
-	mutli,
+	mutli
 } from 'fake';
 
 import localModule from './localModule.js';
@@ -41,5 +41,10 @@ const arrowFunc1Param = arg => {
 const obj = {
 	a: 1,
 	b: 2,
-	c: 3,
+	c: 3
+};
+
+const obj2 = {
+	a: 1
+
 };

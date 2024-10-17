@@ -8,7 +8,7 @@ import vue from './configs/vue.js';
 export default [
 	js.configs.recommended,
 	...base,
-	...imports,
+	...imports
 ];
 
 export { base, imports, ts, vue };
