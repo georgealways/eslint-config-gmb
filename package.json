@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "main": "eslint.config.js",
   "type": "module",
-  "author": "George Michael Brower <hi@georgealways.com>",
+  "author": "George Michael Brower",
   "license": "MIT",
   "description": "George Michael Brower's ESLint configuration",
   "devDependencies": {
