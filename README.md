@@ -77,39 +77,48 @@ function example() {
 }
 ```
 
-## Samples
+### Comma Dangle Single
 
-### JavaScript
+The `comma-dangle-single` rule enforces the presence of trailing commas in multiline collections with more than one item, disallows them in single-item collections, and forbids them if the collection contains any multiline elements.
 
 ```js
-import fs, { readFile } from 'fs';
+// Invalid
+const arr = [
+	1,
+];
 
-import localModule from './localModule.js';
-import { localFunction } from './utils.js';
+const arr2 = [
+	1,
+	2
+];
 
-function myFunction( param1, param2 ) {
+const arr3 = [
+	1,
+	2,
+	[
+		3,
+		4
+	],
+];
 
-	if ( param1 === param2 ) {
-		console.log( 'Equal' );
-	} else {
-		console.log( 'Not Equal' );
-	}
+// Valid
+const arr = [
+	1
+];
 
-	const obj = { a: 1, b: 2 };
-	for ( let key in obj ) {
-		console.log( key, obj[ key ] );
-	}
+const arr2 = [
+	1,
+	2,
+];
 
-}
+const arr3 = [
+	1,
+	2,
+	[
+		3,
+		4,
+	]
+];
 
-myFunction( 1, '1' );
 
-const arrowFunc = ( arg1, arg2 ) => {
-	return arg1 + arg2;
-};
 
-const arrowFunc1Param = arg => {
-	let x = arg;
-	return x;
-};
-```

@@ -1,6 +1,6 @@
 import globals from 'globals';
 
-import customRules from '../rules/index.js';
+import customRules from '../rules.js';
 
 export default [
 	{
