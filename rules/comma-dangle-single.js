@@ -45,7 +45,6 @@ export default {
 
 			const hasTrailingComma = nextToken && nextToken.value === ',';
 
-			// For single-item collections and collections with a multiline element, ensure
 			const needsTrailing = hasMultipleElements && !hasMultilineElement;
 
 			if ( needsTrailing && !hasTrailingComma ) {
