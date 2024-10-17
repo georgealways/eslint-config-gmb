@@ -45,6 +45,7 @@ export default [
 			'no-var': 'warn',
 			'no-whitespace-before-property': 'warn',
 			'object-curly-spacing': [ 'warn', 'always' ],
+			'object-shorthand': [ 'warn', 'properties' ],
 			'quotes': [ 'warn', 'single', { avoidEscape: true } ],
 			'semi-spacing': 'warn',
 			'semi': [ 'warn', 'always' ],

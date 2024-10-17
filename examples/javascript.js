@@ -53,3 +53,5 @@ const obj2 = {
 	}
 };
 
+const shorthand = 'test';
+const obj3 = { shorthand };

@@ -1,3 +1,3 @@
-[ ] i want the dangling commas
-[ ] no { blah: blah }
+[x] i want the dangling commas
+[x] no { blah: blah }
 [ ] vue / ts configs are very messed up
