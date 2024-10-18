@@ -1,4 +1,3 @@
-// Written entirely by ChatGPT (o1-preview)
 export default {
 	meta: {
 		type: 'layout',
@@ -22,50 +21,42 @@ export default {
 
 			const isMultiline = node.loc.start.line !== node.loc.end.line;
 
-			if ( !isMultiline ) {
-				// Do not enforce in single-line collections
-				return;
-			}
+			if ( !isMultiline ) return;
 
-			const lastElement =
-        nonNullElements[ nonNullElements.length - 1 ] ||
-        elements[ elements.length - 1 ];
+			const lastElement = nonNullElements.at( -1 ) || elements.at( -1 );
 
-			if ( !lastElement ) {
-				return;
-			}
+			if ( !lastElement ) return;
 
-			const hasMultilineElement = nonNullElements.some( el => el.loc.start.line !== el.loc.end.line );
-			const hasMultipleElements = elementCount > 1;
+			const hasMultiline = nonNullElements.some( el => el.loc.start.line !== el.loc.end.line );
+			const hasMultiple = elementCount > 1;
 
 			const lastToken = sourceCode.getLastToken( lastElement );
-			const nextToken = sourceCode.getTokenAfter( lastToken, {
-				includeComments: false
-			} );
+			const nextToken = sourceCode.getTokenAfter( lastToken, { includeComments: false } );
 
 			const hasTrailingComma = nextToken && nextToken.value === ',';
 
-			const needsTrailing = hasMultipleElements && !hasMultilineElement;
+			const needsTrailing = hasMultiple && !hasMultiline;
 
 			if ( needsTrailing && !hasTrailingComma ) {
+
 				context.report( {
-					node: lastElement,
 					message: 'Missing trailing comma.',
-					fix( fixer ) {
-						return fixer.insertTextAfter( lastToken, ',' );
-					}
+					node: lastElement,
+					fix: fixer => fixer.insertTextAfter( lastToken, ',' ),
 				} );
+
 			} else if ( !needsTrailing && hasTrailingComma ) {
-				const message = hasMultilineElement ?
+
+				const message = hasMultiline ?
 					'Unexpected trailing comma in a collection with multiline elements.' :
 					'Unexpected trailing comma in a single-item collection.';
+
 				context.report( {
-					node: lastElement,
 					message,
-					fix( fixer ) {
-						return fixer.remove( nextToken );
-					}
+					node: lastElement,
+					fix: fixer => fixer.remove( nextToken ),
 				} );
+
 			}
 
 		}
