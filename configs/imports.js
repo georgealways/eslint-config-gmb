@@ -1,5 +1,11 @@
 import importPlugin from 'eslint-plugin-import';
 
+const groups = [
+	[ 'builtin', 'external' ],
+	[ 'type' ],
+	[ 'internal', 'parent', 'sibling', 'index' ],
+];
+
 export default [ {
 	plugins: { import: importPlugin },
 	settings: {
@@ -10,7 +16,7 @@ export default [ {
 	rules: {
 		'import/newline-after-import': 'warn',
 		'import/order': [ 'warn', {
-			groups: [ [ 'builtin', 'external' ], 'type', [ 'internal', 'parent', 'sibling', 'index' ] ],
+			groups,
 			alphabetize: { order: 'asc', caseInsensitive: true },
 			'newlines-between': 'always',
 		} ]

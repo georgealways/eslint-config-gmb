@@ -3,6 +3,7 @@ import parser from '@typescript-eslint/parser';
 import tseslint from 'typescript-eslint';
 
 export const parserOptions = {
+	parser, // Only needed for vue
 	extraFileExtensions: [ '.vue' ],
 	projectService: true,
 };

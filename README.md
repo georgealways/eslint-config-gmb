@@ -79,7 +79,9 @@ function example() {
 
 ### Comma Dangle Single
 
-The `comma-dangle-single` rule enforces the presence of trailing commas in multiline collections with more than one item, disallows them in single-item collections, and forbids them if the collection contains any multiline elements.
+The `comma-dangle-single` rule requires trailing commas in multiline collections with more than one item. It disallows them in single-item collections and collections containing multiline elements.
+
+The purpose of this rule is to make it easy to move elements to a new line, while ensuring that "configuration objects" or objects with deep nesting are excluded from this behavior, unlike the built-in `comma-dangle`.
 
 ```js
 // Invalid

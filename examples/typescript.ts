@@ -9,7 +9,7 @@ import config, {
 } from '../eslint.config.js';
 import test from './javascript.js';
 
-function myFunction( param1, param2 ) {
+function myFunction( param1: string, param2: string ) {
 
 	console.log( 'This is a test function' );
 	if ( param1 === param2 ) {
@@ -25,7 +25,7 @@ function myFunction( param1, param2 ) {
 
 }
 
-myFunction( 1, '1' );
+myFunction( '1', '1' );
 
 const arrowFunc = ( arg1: number, arg2: number ): number => {
 	return arg1 + arg2;
