@@ -1,15 +1,14 @@
 import stylisticTs from '@stylistic/eslint-plugin-ts';
-import tsEslint from '@typescript-eslint/eslint-plugin';
 import parser from '@typescript-eslint/parser';
+import tseslint from 'typescript-eslint';
 
 export const parserOptions = {
-	parser,
-	project: [ './tsconfig.app.json', './tsconfig.*.json', './tsconfig.json' ],
 	extraFileExtensions: [ '.vue' ],
+	projectService: true,
 };
 
 export default [
-	tsEslint.configs.strict,
+	...tseslint.configs.recommendedTypeChecked,
 	{
 		files: [ '**/*.{ts,tsx,vue}' ],
 		languageOptions: {
@@ -17,14 +16,28 @@ export default [
 			parserOptions,
 		},
 		plugins: {
-			'@stylistic/ts': stylisticTs
+			'@stylistic/ts': stylisticTs,
+			'@typescript-eslint': tseslint.plugin,
 		},
 		rules: {
-			'no-undef': 'off', // ts handles this
 			'@typescript-eslint/no-unused-vars': 'warn',
 			'@typescript-eslint/no-explicit-any': 'off',
 			'@typescript-eslint/no-non-null-assertion': 'off',
+			'@typescript-eslint/no-inferrable-types': [ 'warn', { ignoreParameters: false, ignoreProperties: false } ],
 			'@stylistic/ts/type-annotation-spacing': [ 'warn', { after: true } ],
+		}
+	},
+	{
+		// Why is this necessary? No one else here is targeting js files.
+		files: [ '**/*.js' ],
+		languageOptions: {
+			...tseslint.configs.disableTypeChecked.languageOptions
+		},
+		rules: {
+			...tseslint.configs.disableTypeChecked.rules,
+			// Swap these back
+			'no-unused-vars': 'warn',
+			'@typescript-eslint/no-unused-vars': 'off',
 		}
 	}
 ];

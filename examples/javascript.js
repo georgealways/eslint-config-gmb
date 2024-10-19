@@ -1,15 +1,15 @@
 /* eslint-disable no-unused-vars */
 
-import fs, { readFile } from 'fs';
+import blah from '@eslint/js';
 
-import {
+import config, {
+	base,
 	imports,
-	line,
-	mutli
-} from 'fake';
+	ts,
+	vue,
+} from '../eslint.config.js';
 
-import localModule from './localModule.js';
-import { localFunction } from './utils.js';
+import test from './javascript.js';
 
 function myFunction( param1, param2 ) {
 

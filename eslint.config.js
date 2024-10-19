@@ -9,6 +9,8 @@ export default [
 	js.configs.recommended,
 	...base,
 	...imports,
+	...ts,
+	// ...vue,
 ];
 
 export { base, imports, ts, vue };
