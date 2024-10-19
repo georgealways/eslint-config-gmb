@@ -1,5 +1,4 @@
 /* eslint-disable no-unused-vars */
-
 import blah from '@eslint/js';
 
 import config, {
@@ -8,7 +7,6 @@ import config, {
 	ts,
 	vue,
 } from '../eslint.config.js';
-
 import test from './javascript.js';
 
 function myFunction( param1, param2 ) {
@@ -21,7 +19,7 @@ function myFunction( param1, param2 ) {
 	}
 
 	const obj = { a: 1, b: 2 };
-	for ( let key in obj ) {
+	for ( const key in obj ) {
 		console.log( key, obj[ key ] );
 	}
 
@@ -34,7 +32,7 @@ const arrowFunc = ( arg1, arg2 ) => {
 };
 
 const arrowFunc1Param = arg => {
-	let x = arg;
+	const x = arg;
 	return x;
 };
 
