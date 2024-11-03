@@ -59,7 +59,7 @@ export default {
 		return {
 			BlockStatement: checkSymmetry,
 			ClassBody: checkSymmetry,
-			SwitchStatement: checkSymmetry,
+			// SwitchStatement: checkSymmetry, // todo
 			ObjectExpression: checkSymmetry,
 			ArrayExpression: checkSymmetry,
 		};
