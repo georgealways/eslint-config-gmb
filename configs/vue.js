@@ -2,7 +2,7 @@ import vue from 'eslint-plugin-vue';
 import vueScopedCss from 'eslint-plugin-vue-scoped-css';
 import vueParser from 'vue-eslint-parser';
 
-import { parserOptions } from './typescript.js';
+import { parserOptions } from './ts-vue.js';
 
 export default [
 	...vue.configs[ 'flat/recommended' ],

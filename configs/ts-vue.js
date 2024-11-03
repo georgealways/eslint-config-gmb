@@ -8,17 +8,12 @@ export const parserOptions = {
 	projectService: true,
 };
 
+/** TypeScript rules that don't conflict with the vue boilerplate */
 export default [
-	...tseslint.configs.recommendedTypeChecked,
 	{
 		files: [ '**/*.{ts,tsx,vue}' ],
-		languageOptions: {
-			parser,
-			parserOptions,
-		},
 		plugins: {
-			'@stylistic/ts': stylisticTs,
-			'@typescript-eslint': tseslint.plugin,
+			'@stylistic/ts': stylisticTs
 		},
 		rules: {
 			'@typescript-eslint/no-unused-vars': 'warn',
