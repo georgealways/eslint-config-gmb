@@ -11,6 +11,7 @@ export const parserOptions = {
 /** TypeScript rules that don't conflict with the vue boilerplate */
 export default [
 	{
+		name: '@eslint-config-gmb/ts-vue',
 		files: [ '**/*.{ts,tsx,vue}' ],
 		plugins: {
 			'@stylistic/ts': stylisticTs

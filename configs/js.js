@@ -4,6 +4,7 @@ import customRules from '../rules.js';
 
 export default [
 	{
+		name: '@eslint-config-gmb/js',
 		files: [ '**/*.{js,jsx,ts,tsx,vue}' ],
 		languageOptions: {
 			ecmaVersion: 'latest',
