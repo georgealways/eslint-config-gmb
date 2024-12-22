@@ -1,21 +1,20 @@
 # eslint-config-gmb
 
-**! README IS OUT OF DATE !**
+**eslint-config-gmb** is an ESLint configuration created by George Michael Brower for JavaScript, TypeScript, and Vue projects. It's really only intended for me, but I published it to npm to make it easier to use across projects.
 
-**eslint-config-gmb** is an ESLint configuration created by George Michael Brower. This configuration aims to provide a comprehensive and stylistic linting setup for JavaScript, TypeScript, and Vue projects.
+### Features
 
-The configuration features:
+- Tabs not spaces `→→`
+- Spaces in parenthesis, brackets, and braces `[ val ] = fn( { arg } )`
+- Automatic import sorting
 
-- Tabbed indentation.
-- Spaces in parenthesis, brackets, and braces.
-- Import sorting by filename (members sorted alphabetically).
-- Import grouping by type (external, internal).
-- Symmetric newlines within blocks.
+### Custom rules
+
+- Symmetric newlines within blocks
+- Trailing commas in multiline collections (with exceptions)
 
 
 ## Usage
-
-**! README IS OUT OF DATE !**
 
 Create an `eslint.config.js` file in your project root with the following:
 
@@ -26,35 +25,43 @@ export { default } from 'eslint-config-gmb';
 This includes the base configuration. To extend the configuration with TypeScript or Vue rules, import the configurations and spread them into an array:
 
 ```js
-import base, { typescript, vue } from 'eslint-config-gmb';
+import { base, tsVue, vue } from 'eslint-config-gmb';
 
 export default [
-	...base,
-	...typescript,
-	...vue,
-	// Custom config here...
+	...base, // base === default
+	...tsVue,
+	...vue
 ]
 ```
 
 ## Configurations
 
-**! README IS OUT OF DATE !**
+```
+* base (default)
+├── eslintJs.configs.recommended
+├── * js 
+└── * imports
+* tsVue
+* vue
 
-### Base
+* = exported
+```
 
-The base configuration includes general rules and settings for JavaScript projects. It extends the recommended ESLint rules and includes additional stylistic rules.
+### js
 
-### Import
+Provides basic stylistic rules. Included as part of `base`.
 
-The import configuration includes rules for managing import statements. It uses `eslint-plugin-import` and includes rules for ordering and grouping imports. This is included in the base configuration.
+### imports
 
-### TypeScript
+Enforces import sorting and grouping. Included as part of `base`.
 
-The TypeScript configuration extends the base configuration and includes additional rules and settings specific to TypeScript. It uses `@typescript-eslint/parser` and includes rules from `@typescript-eslint/eslint-plugin`.
+### tsVue
 
-### Vue
+Provides rules for TypeScript + Vue that do not conflict with the Vue boilerplate.
 
-The Vue configuration extends the base configuration and includes additional rules and settings for Vue.js projects. It uses `vue-eslint-parser` and includes rules from `eslint-plugin-vue` and `eslint-plugin-vue-scoped-css`.
+### vue
+
+Provides rules for Vue single-file components. Enforces the use of `@` for imports and scoped CSS.
 
 
 ## Custom Rules

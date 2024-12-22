@@ -12,4 +12,4 @@ const base = [
 ];
 
 export default base;
-export { base, tsVue, vue };
+export { base, js, imports, tsVue, vue };
