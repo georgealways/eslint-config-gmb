@@ -1,5 +1,7 @@
 # eslint-config-gmb
 
+**! README IS OUT OF DATE !**
+
 **eslint-config-gmb** is an ESLint configuration created by George Michael Brower. This configuration aims to provide a comprehensive and stylistic linting setup for JavaScript, TypeScript, and Vue projects.
 
 The configuration features:
@@ -12,6 +14,8 @@ The configuration features:
 
 
 ## Usage
+
+**! README IS OUT OF DATE !**
 
 Create an `eslint.config.js` file in your project root with the following:
 
@@ -33,6 +37,8 @@ export default [
 ```
 
 ## Configurations
+
+**! README IS OUT OF DATE !**
 
 ### Base
 
@@ -121,6 +127,4 @@ const arr3 = [
 		4,
 	]
 ];
-
-
-
+```
