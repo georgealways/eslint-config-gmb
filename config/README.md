@@ -1,17 +1,17 @@
 # eslint-config-gmb
 
-**eslint-config-gmb** is an ESLint configuration created by George Michael Brower for JavaScript, TypeScript, and Vue projects. It's really only intended for me, but I published it to npm to make it easier to use across projects.
+**eslint-config-gmb** is an ESLint configuration created by George Michael Brower for JavaScript, TypeScript, and Vue projects. It's really only intended for me, but I published it to npm to make it easier to use across projects. Based on the ESLint 9 flat configuration format.
 
 ### Features
 
 - Tabs not spaces `→→`
 - Spaces in parenthesis, brackets, and braces `[ val ] = fn( { arg } )`
-- Automatic import sorting
+- Automatic import sorting.
 
 ### Custom rules
 
-- Symmetric newlines within blocks
-- Trailing commas in multiline collections (with exceptions)
+- "Symmetric" newlines within blocks.
+- Trailing commas in multiline collections (with exceptions).
 
 
 ## Usage
@@ -19,18 +19,19 @@
 Create an `eslint.config.js` file in your project root with the following:
 
 ```js
-export { default } from 'eslint-config-gmb';
+import base from 'eslint-config-gmb';
+
+export default base;
 ```
 
 This includes the base configuration. To extend the configuration with TypeScript or Vue rules, import the configurations and spread them into an array:
 
 ```js
-import { base, tsVue, vue } from 'eslint-config-gmb';
+import { base, ts } from 'eslint-config-gmb';
 
 export default [
-	...base, // base === default
-	...tsVue,
-	...vue
+	...base, // synonym for the default export
+	...ts
 ]
 ```
 
@@ -41,8 +42,9 @@ export default [
 ├── eslintJs.configs.recommended
 ├── * js 
 └── * imports
-* tsVue
+* ts
 * vue
+* tsVue
 
 * = exported
 ```
@@ -55,14 +57,17 @@ Provides basic stylistic rules. Included as part of `base`.
 
 Enforces import sorting and grouping. Included as part of `base`.
 
-### tsVue
+### ts
 
-Provides rules for TypeScript + Vue that do not conflict with the Vue boilerplate.
+Provides basic rules for TypeScript files. Not to be used with `vue` config.
 
 ### vue
 
-Provides rules for Vue single-file components. Enforces the use of `@` for imports and scoped CSS.
+Provides rules for Vue single-file components.
 
+### tsVue
+
+Custom Typescript rules for Vue that won't conflict with the rules provided by the Vue boilerplate. See `examples/vue/eslint.config.js` for a real-world example.
 
 ## Custom Rules
 
@@ -73,7 +78,7 @@ The `symmetric-newlines` rule enforces an equal number of starting and ending ne
 ```js
 // Invalid
 function example() {
-
+⏎
 	console.log( 'Hello, world!' );
 }
 
@@ -84,9 +89,9 @@ function example() {
 
 // Valid
 function example() {
-
+⏎
 	console.log( 'Hello, world!' );
-
+⏎
 }
 ```
 
