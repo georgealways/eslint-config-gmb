@@ -24,8 +24,8 @@
     "eslint": "^9.12.0"
   },
   "scripts": {
-    "lint": "eslint **/*.{js,ts} --fix",
-    "test": "npm run lint",
+    "lint": "eslint . --fix",
+    "test": "../scripts/test",
     "preversion": "npm test",
     "prepublishOnly": "npm test"
   },
