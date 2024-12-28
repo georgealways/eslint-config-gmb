@@ -22,6 +22,8 @@ export default [
 	{ rules: { 'no-console': 'warn'	}	},
 
 	...vue,
-	...tsVue
+	...tsVue,
+
+	{ ignores: [ 'invalid*' ] }
 
 ];

@@ -1,0 +1,11 @@
+#!/bin/sh
+
+set -e
+
+SCRIPT_DIR="$(cd "$(dirname "$0")" && pwd)"
+
+for dir in js ts vue; do
+	pushd "examples/$dir" > /dev/null
+	"$SCRIPT_DIR/compare" "invalid.$dir" "valid.$dir"
+	popd > /dev/null
+done

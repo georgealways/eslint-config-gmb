@@ -7,6 +7,6 @@
     "eslint": "^9.17.0"
   },
   "dependencies": {
-    "eslint-config-gmb": "file:../../config"
+    "eslint-config-gmb": "file:../../src"
   }
 }

@@ -9,7 +9,7 @@
     "vite": "^6.0.6"
   },
   "dependencies": {
-    "eslint-config-gmb": "file:../../config",
+    "eslint-config-gmb": "file:../../src",
     "vue": "^3.5.13"
   }
 }

@@ -10,4 +10,7 @@
     "editor.insertSpaces": true,
     "editor.tabSize": 2,
   },
+  "files.exclude": {
+    "examples/**/package-lock.json": true
+  }
 }

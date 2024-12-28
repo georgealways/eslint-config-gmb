@@ -1,0 +1,29 @@
+#!/bin/sh
+
+# Exit the script if any command fails
+set -e
+
+# You can pass in the paths to the two files as arguments, or hardcode them.
+FILE_A="${1:-path/to/fileA.js}"
+FILE_B="${2:-path/to/fileB.js}"
+
+# 1. Create a backup of file A
+cp "$FILE_A" "$FILE_A.bak"
+
+# Use a trap so that even if we fail or exit, file A is restored.
+# This ensures file A is always reverted to its original state.
+cleanup() {
+  mv "$FILE_A.bak" "$FILE_A" 2>/dev/null || true
+}
+trap cleanup EXIT
+
+# 2. Run eslint --fix on file A
+npx eslint --no-ignore --fix "$FILE_A"
+
+# 3. Compare the (fixed) file A to file B.
+if ! diff -q "$FILE_A" "$FILE_B" &>/dev/null; then
+  echo "ERROR: After eslint --fix, $FILE_A and $FILE_B differ."
+  exit 1
+fi
+
+echo "SUCCESS: $FILE_A and $FILE_B are identical after eslint --fix."
