@@ -1,5 +1,0 @@
-[x] i want the dangling commas
-[x] no { blah: blah }
-[x] ts configs are very messed up
-[x] space between ../ and ./ imports ?
-[ ] vue can't really live alongside these configs by default.
