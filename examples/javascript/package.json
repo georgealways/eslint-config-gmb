@@ -1,0 +1,12 @@
+{
+  "type": "module",
+  "scripts": {
+    "lint": "eslint main* --max-warnings 0"
+  },
+  "devDependencies": {
+    "eslint": "^9.17.0"
+  },
+  "dependencies": {
+    "eslint-config-gmb": "file:../../config"
+  }
+}

@@ -1,0 +1,37 @@
+{
+  "name": "eslint-config-gmb",
+  "version": "0.1.0",
+  "main": "eslint.config.js",
+  "type": "module",
+  "author": "George Michael Brower",
+  "license": "MIT",
+  "description": "George Michael Brower's ESLint configuration",
+  "dependencies": {
+    "@eslint/js": "^9.12.0",
+    "@stylistic/eslint-plugin-ts": "^2.9.0",
+    "@typescript-eslint/eslint-plugin": "^8.9.0",
+    "@typescript-eslint/parser": "^8.9.0",
+    "@vue/eslint-config-typescript": "^14.2.0",
+    "eslint-import-resolver-typescript": "^3.6.3",
+    "eslint-plugin-import": "^2.31.0",
+    "eslint-plugin-vue": "^9.32.0",
+    "eslint-plugin-vue-scoped-css": "^2.8.1",
+    "globals": "^15.11.0",
+    "typescript-eslint": "^8.10.0",
+    "vue-eslint-parser": "^9.4.3"
+  },
+  "peerDependencies": {
+    "eslint": "^9.12.0"
+  },
+  "scripts": {
+    "lint": "eslint **/*.{js,ts} --fix",
+    "test": "npm run lint",
+    "preversion": "npm test",
+    "prepublishOnly": "npm test"
+  },
+  "files": [
+    "eslint.config.js",
+    "configs",
+    "rules"
+  ]
+}

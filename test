@@ -1,0 +1,10 @@
+#!/bin/sh
+
+# abort script if any command fails
+set -e
+
+# npm run lint in every example folder
+for d in examples/*/ ; do
+	echo "Linting $d"
+	(cd "$d" && npm run lint)
+done

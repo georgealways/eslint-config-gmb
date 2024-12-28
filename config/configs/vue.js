@@ -1,7 +1,7 @@
 import vueScopedCss from 'eslint-plugin-vue-scoped-css';
 import vueParser from 'vue-eslint-parser';
 
-import { parserOptions } from './ts-vue.js';
+import { parserOptions } from './ts.js';
 
 export default [
 	{
@@ -9,7 +9,10 @@ export default [
 		files: [ '**/*.vue' ],
 		languageOptions: {
 			parser: vueParser,
-			parserOptions,
+			parserOptions: {
+				...parserOptions,
+				extraFileExtensions: [ '.vue' ],
+			}
 		},
 		plugins: {
 			'vue-scoped-css': vueScopedCss

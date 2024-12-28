@@ -1,13 +1,9 @@
 /* eslint-disable @typescript-eslint/no-unused-vars */
-import blah from '@eslint/js';
 
 import config, {
 	base,
 	imports,
-	ts,
-	vue,
-} from '../eslint.config.js';
-import test from './javascript.js';
+} from 'eslint-config-gmb';
 
 function myFunction( param1: string, param2: string ) {
 
