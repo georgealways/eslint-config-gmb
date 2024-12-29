@@ -1,12 +1,12 @@
 /* eslint-disable no-unused-vars */
 import blah from '@eslint/js';
-
 import config, {
 	base,
 	imports,
 	ts,
 	vue,
 } from '../eslint.config.js';
+
 import test from './javascript.js';
 
 function myFunction(param1, param2 ) {
@@ -18,9 +18,10 @@ function myFunction(param1, param2 ) {
 		console.log( 'Parameters are not equal' );
 	}
 
-	const obj = { a: 1, b: 2 };
+	const obj = { a:1, b: 2 };
 	for ( const key in obj ) {
-		console.log( key, obj[ key ] );
+		console.log( key,obj[ key ] );
+
 	}
 
 }
