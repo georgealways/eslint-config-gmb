@@ -140,3 +140,12 @@ const arr3 = [
 	]
 ];
 ```
+
+
+## Repository Structure
+
+- **`src/`** contains the actual config package. This is what is published to npm.
+- `src/configs/` contains the exported configurations.
+- `src/rules/` contains custom rules used in those configs.
+- `examples/` demonstrates config behavior in different contexts.
+
