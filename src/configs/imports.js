@@ -7,7 +7,7 @@ const groups = [
 ];
 
 export default [ {
-	name: '@eslint-config-gmb/imports',
+	name: 'eslint-config-gmb/imports',
 	plugins: { import: importPlugin },
 	settings: {
 		'import/parsers': {

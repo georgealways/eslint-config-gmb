@@ -7,14 +7,19 @@ import ts from './ts.js';
 const tsVue = [];
 
 ts.forEach( config => {
-	const { plugins } = config;
-	if ( !plugins ) return;
+
+	if ( !config.plugins ) return;
+
 	// eslint-disable-next-line no-unused-vars
-	const { '@typescript-eslint': _, ...tsNoTsPlugin } = plugins;
-	tsVue.push( {
-		...config,
-		plugins: tsNoTsPlugin,
-	} );
+	const { '@typescript-eslint': _, ...withoutTsEsLint } = config.plugins;
+	const newConfig = { ...config, plugins: withoutTsEsLint };
+
+	if ( config.name ) {
+		newConfig.name = config.name.replace( 'ts', 'tsVue' );
+	}
+
+	tsVue.push( newConfig );
+
 } );
 
 export default tsVue;

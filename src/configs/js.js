@@ -4,12 +4,12 @@ import customRules from '../rules.js';
 
 export default [
 	{
-		name: '@eslint-config-gmb/js',
+		name: 'eslint-config-gmb/js',
 		files: [ '**/*.{js,jsx,ts,tsx,vue}' ],
 		languageOptions: {
 			ecmaVersion: 'latest',
 			sourceType: 'module',
-			globals: { ...globals.browser },
+			globals: globals.browser,
 		},
 		plugins: {
 			'@gmb': customRules

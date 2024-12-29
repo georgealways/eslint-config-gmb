@@ -12,6 +12,7 @@ export const parserOptions = {
 
 export default [
 	{
+		name: 'eslint-config-gmb/ts',
 		files: [ '**/*.ts', '**/*.tsx' ],
 		languageOptions: {
 			parser: tsParser,

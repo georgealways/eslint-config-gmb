@@ -5,7 +5,7 @@ import { parserOptions } from './ts.js';
 
 export default [
 	{
-		name: '@eslint-config-gmb/vue',
+		name: 'eslint-config-gmb/vue',
 		files: [ '**/*.vue' ],
 		languageOptions: {
 			parser: vueParser,
