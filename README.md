@@ -21,7 +21,9 @@ Create an `eslint.config.js` file in your project root with the following:
 ```js
 import base from 'eslint-config-gmb';
 
-export default base;
+export default [ 
+	...base 
+];
 ```
 
 This includes the base configuration. To extend the configuration with TypeScript or Vue rules, import the configurations and spread them into an array:
@@ -31,7 +33,7 @@ import { base, ts } from 'eslint-config-gmb';
 
 export default [
 	...base, // synonym for the default export
-	...ts
+	...ts,
 ]
 ```
 
