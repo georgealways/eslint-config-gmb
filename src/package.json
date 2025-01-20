@@ -27,11 +27,12 @@
     "lint": "eslint . --fix",
     "test": "../scripts/test",
     "preversion": "npm test",
-    "prepublishOnly": "npm test"
+    "prepublishOnly": "npm test && cp ../README.md README.md"
   },
   "files": [
     "eslint.config.js",
     "configs",
-    "rules"
+    "rules",
+    "README.md"
   ]
 }
