@@ -1,6 +1,6 @@
 # eslint-config-gmb
 
-**eslint-config-gmb** is an ESLint configuration created by George Michael Brower for JavaScript, TypeScript, and Vue projects. It's really only intended for me, but I published it to npm to make it easier to use across projects. Based on the ESLint 9 flat configuration format.
+**eslint-config-gmb** is an ESLint configuration for JavaScript, TypeScript, and Vue projects. It's really only intended for me (George Michael Brower) but I published it to make it easier to install across projects. Uses the ESLint 9 flat configuration format.
 
 ### Features
 
@@ -13,6 +13,14 @@
 - "Symmetric" newlines within blocks.
 - Trailing commas in multiline collections (with exceptions).
 
+## Contents
+
+1. [Usage](#usage)
+1. [Configurations](#configurations)
+1. [Custom Rules](#custom-rules)
+	1. [Symmetric Newlines](#symmetric-newlines)
+	1. [Comma Dangle Single](#comma-dangle-single)
+1. [Repository Structure](#repository-structure)
 
 ## Usage
 
@@ -21,9 +29,7 @@ Create an `eslint.config.js` file in your project root with the following:
 ```js
 import base from 'eslint-config-gmb';
 
-export default [ 
-	...base 
-];
+export default [ ...base ];
 ```
 
 This includes the base configuration. To extend the configuration with TypeScript or Vue rules, import the configurations and spread them into an array:
@@ -32,44 +38,31 @@ This includes the base configuration. To extend the configuration with TypeScrip
 import { base, ts } from 'eslint-config-gmb';
 
 export default [
-	...base, // synonym for the default export
+	...base,
 	...ts,
-]
+];
 ```
 
 ## Configurations
 
 ```
-* base (default)
-├── eslintJs.configs.recommended
-├── * js 
-└── * imports
-* ts
-* vue
-* tsVue
-
-* = exported
+base (default)
+├─ eslintJs.configs.recommended
+├─ js
+└─ imports
+ts
+vue
+tsVue
 ```
 
-### js
-
-Provides basic stylistic rules. Included as part of `base`.
-
-### imports
-
-Enforces import sorting and grouping. Included as part of `base`.
-
-### ts
-
-Provides basic rules for TypeScript files. Not to be used with `vue` config.
-
-### vue
-
-Provides rules for Vue single-file components.
-
-### tsVue
-
-Custom Typescript rules for Vue that won't conflict with the rules provided by the Vue boilerplate. See `examples/vue/eslint.config.js` for a real-world example.
+| Configuration | Description |
+| --- | --- |
+| base (default) | The default configuration includes the recommended ESLint rules, basic stylistic rules, and import sorting. |
+| js | Provides basic stylistic rules. Included as part of `base`. |
+| imports | Enforces import sorting and grouping. Included as part of `base`. |
+| ts | Provides basic rules for TypeScript files. Not to be used with `vue` config. |
+| vue | Provides rules for Vue single-file components. |
+| tsVue | Custom Typescript rules for Vue that won't conflict with the rules provided by the Vue boilerplate. See `examples/vue/eslint.config.js` for a real-world example. |
 
 ## Custom Rules
 
