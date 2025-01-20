@@ -22,8 +22,8 @@ npx eslint --no-ignore --fix "$FILE_A"
 
 # 3. Compare the (fixed) file A to file B.
 if ! diff -q "$FILE_A" "$FILE_B" &>/dev/null; then
-  echo "ERROR: After eslint --fix, $FILE_A and $FILE_B differ."
+  echo "FAIL: After eslint --fix, $FILE_A and $FILE_B differ."
   exit 1
 fi
 
-echo "SUCCESS: $FILE_A and $FILE_B are identical after eslint --fix."
+echo "PASS: $FILE_A and $FILE_B are identical after eslint --fix."
