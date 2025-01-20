@@ -1,6 +1,6 @@
 # eslint-config-gmb
 
-**eslint-config-gmb** is an ESLint configuration for JavaScript, TypeScript, and Vue projects. It's really only intended for me (George Michael Brower) but I published it to make it easier to install across projects. Uses the ESLint 9 flat configuration format.
+**eslint-config-gmb** is an ESLint configuration for JavaScript, TypeScript, and Vue projects. It's really only intended for me, but I published it to make it easier to install across projects.
 
 ### Features
 
