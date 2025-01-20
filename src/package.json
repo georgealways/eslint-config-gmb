@@ -1,6 +1,6 @@
 {
   "name": "eslint-config-gmb",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "main": "eslint.config.js",
   "type": "module",
   "author": "George Michael Brower",
@@ -27,7 +27,7 @@
     "lint": "eslint . --fix",
     "test": "../scripts/test",
     "preversion": "npm test",
-    "prepublishOnly": "npm test && cp ../README.md README.md"
+    "prepublishOnly": "npm test"
   },
   "files": [
     "eslint.config.js",
