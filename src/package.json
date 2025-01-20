@@ -1,6 +1,6 @@
 {
   "name": "eslint-config-gmb",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "main": "eslint.config.js",
   "type": "module",
   "author": "George Michael Brower",

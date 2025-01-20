@@ -24,12 +24,16 @@
 
 ## Usage
 
+Install ESLint and the configuration package:
+
+```sh
+npm install -D eslint eslint-config-gmb
+```
+
 Create an `eslint.config.js` file in your project root with the following:
 
 ```js
-import base from 'eslint-config-gmb';
-
-export default [ ...base ];
+export { default as default } from 'eslint-config-gmb';
 ```
 
 This includes the base configuration. To extend the configuration with TypeScript or Vue rules, import the configurations and spread them into an array:
