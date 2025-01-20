@@ -33,6 +33,7 @@
     "eslint.config.js",
     "configs",
     "rules",
+    "rules.js",
     "README.md"
   ]
 }
