@@ -11,7 +11,7 @@
     "@stylistic/eslint-plugin-ts": "^2.9.0",
     "@typescript-eslint/eslint-plugin": "^8.9.0",
     "@typescript-eslint/parser": "^8.9.0",
-    "@vue/eslint-config-typescript": "^14.2.0",
+    "@vue/eslint-config-typescript": "^14.3.0",
     "eslint-import-resolver-typescript": "^3.6.3",
     "eslint-plugin-import": "^2.31.0",
     "eslint-plugin-vue": "^9.32.0",
@@ -26,6 +26,7 @@
   "scripts": {
     "lint": "eslint . --fix",
     "test": "../scripts/test",
+    "test:watch": "onchange '../src/**/*.{js,json}' '../examples/**/*.{js,ts,vue}' -e '../examples/**/*.test.{js,ts,vue}' -i -v -- npm test",
     "preversion": "npm test",
     "prepublishOnly": "npm test"
   },
@@ -35,5 +36,8 @@
     "rules",
     "rules.js",
     "README.md"
-  ]
+  ],
+  "devDependencies": {
+    "onchange": "^7.1.0"
+  }
 }

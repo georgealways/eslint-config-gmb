@@ -54,9 +54,9 @@ base (default)
 ├─ eslintJs.configs.recommended
 ├─ js
 └─ imports
-ts
 vue
-tsVue
+├─ base
+└─ ts
 ```
 
 | Configuration | Description |
@@ -65,8 +65,7 @@ tsVue
 | js | Provides basic stylistic rules. Included as part of `base`. |
 | imports | Enforces import sorting and grouping. Included as part of `base`. |
 | ts | Provides basic rules for TypeScript files. Not to be used with `vue` config. |
-| vue | Provides rules for Vue single-file components. |
-| tsVue | Custom Typescript rules for Vue that won't conflict with the rules provided by the Vue boilerplate. See `examples/vue/eslint.config.js` for a real-world example. |
+| vue | Provides rules for Vue single-file components. Includes `base` and `ts` for convenience |
 
 ## Custom Rules
 
