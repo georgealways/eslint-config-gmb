@@ -38,6 +38,7 @@ export default [
 			'no-extra-parens': 'warn',
 			'no-extra-semi': 'warn',
 			'no-inner-declarations': 'off',
+			'no-mixed-spaces-and-tabs': [ 'warn', 'smart-tabs' ],
 			'no-multi-spaces': 'warn',
 			'no-multiple-empty-lines': [ 'warn', { max: 1, maxBOF: 0, maxEOF: 1 } ],
 			'no-param-reassign': 'warn',
