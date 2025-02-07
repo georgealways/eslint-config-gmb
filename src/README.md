@@ -13,18 +13,7 @@
 - "Symmetric" newlines within blocks.
 - Trailing commas in multiline collections (with exceptions).
 
-## Contents
-
-1. [Usage](#usage)
-1. [Configurations](#configurations)
-1. [Custom Rules](#custom-rules)
-	1. [Symmetric Newlines](#symmetric-newlines)
-	1. [Comma Dangle Single](#comma-dangle-single)
-1. [Repository Structure](#repository-structure)
-
-## Usage
-
-Install ESLint and the configuration package:
+## Installation
 
 ```sh
 npm install -D eslint eslint-config-gmb
@@ -36,42 +25,37 @@ Create an `eslint.config.js` file in your project root with the following:
 export { default as default } from 'eslint-config-gmb';
 ```
 
-This includes the base configuration. To extend the configuration with TypeScript or Vue rules, import the configurations and spread them into an array:
+This includes the base configuration. It's intended for vanilla, browser-based JavaScript projects.
+
+## Other configurations
+
+```
+vue
+└─ ts
+   └─ js (default)
+```
+
+### TypeScript
+
+For vanilla TypeScript projects. Contains the base configuration with TypeScript-specific rules.
 
 ```js
-import { base, ts } from 'eslint-config-gmb';
-
-export default [
-	...base,
-	...ts,
-];
+export { ts as default } from 'eslint-config-gmb';
 ```
 
-## Configurations
+### Vue
 
-```
-base (default)
-├─ eslintJs.configs.recommended
-├─ js
-└─ imports
-vue
-├─ base
-└─ ts
-```
+Contains the base configuration and the TypeScript configuration, with Vue-specific rules.
 
-| Configuration | Description |
-| --- | --- |
-| base (default) | The default configuration includes the recommended ESLint rules, basic stylistic rules, and import sorting. |
-| js | Provides basic stylistic rules. Included as part of `base`. |
-| imports | Enforces import sorting and grouping. Included as part of `base`. |
-| ts | Provides basic rules for TypeScript files. Not to be used with `vue` config. |
-| vue | Provides rules for Vue single-file components. Includes `base` and `ts` for convenience |
+```js
+export { vue as default } from 'eslint-config-gmb';
+```
 
 ## Custom Rules
 
 ### Symmetric Newlines
 
-The `symmetric-newlines` rule enforces an equal number of starting and ending newlines within blocks. This rule ensures that the number of newlines after the opening brace matches the number of newlines before the closing brace.
+The `symmetric-newlines` rule ensures that the number of newlines after the opening brace matches the number of newlines before the closing brace.
 
 ```js
 // Invalid
@@ -95,9 +79,9 @@ function example() {
 
 ### Comma Dangle Single
 
-The `comma-dangle-single` rule requires trailing commas in multiline collections with more than one item. It disallows them in single-item collections and collections containing multiline elements.
+The `comma-dangle-single` rule requires trailing commas in collections. It disallows them in collections with multiline elements or single item collections.
 
-The purpose of this rule is to make it easy to move elements to a new line, while ensuring that "configuration objects" or objects with deep nesting are excluded from this behavior, unlike the built-in `comma-dangle`.
+This makes it easy to move elements to a new line, while excluding configuration objects or objects with deep nesting from this behavior (unlike the built-in `comma-dangle`).
 
 ```js
 // Invalid
@@ -145,5 +129,5 @@ const arr3 = [
 - **`src/`** contains the actual config package. This is what is published to npm.
 - `src/configs/` contains the exported configurations.
 - `src/rules/` contains custom rules used in those configs.
-- `examples/` demonstrates config behavior in different contexts.
+- `examples/` demonstrates config behavior in different contexts. Also used for testing.
 

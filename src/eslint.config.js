@@ -1,20 +1,25 @@
 import eslintJs from '@eslint/js';
 
 import imports from './configs/imports.js';
-import js from './configs/js.js';
-import ts from './configs/ts.js';
+import _js from './configs/js.js';
+import _ts from './configs/ts.js';
 import _vue from './configs/vue.js';
 
-const base = [
+const js = [
 	eslintJs.configs.recommended,
-	...js,
+	..._js,
 	...imports,
 ];
 
+const ts = [
+	...js,
+	..._ts,
+];
+
 const vue = [
-	...base,
+	...ts,
 	..._vue,
 ];
 
-export default base;
-export { base, js, imports, ts, vue };
+export default js;
+export { js, imports, ts, vue };
