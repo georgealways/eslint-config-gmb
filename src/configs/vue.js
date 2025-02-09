@@ -3,9 +3,9 @@ import pluginVue from 'eslint-plugin-vue';
 import vueScopedCss from 'eslint-plugin-vue-scoped-css';
 import vueParser from 'vue-eslint-parser';
 
-import ts, { parserOptions } from './ts.js';
+import { tsParserOptions } from './shared.js';
+import ts from './ts.js';
 
-// Basic Vue+TS config
 const vue = [
 	{
 		name: 'eslint-config-gmb/vue',
@@ -13,7 +13,7 @@ const vue = [
 		languageOptions: {
 			parser: vueParser,
 			parserOptions: {
-				...parserOptions,
+				...tsParserOptions,
 				extraFileExtensions: [ '.vue' ],
 			}
 		},

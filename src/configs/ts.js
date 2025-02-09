@@ -2,13 +2,7 @@ import stylisticTs from '@stylistic/eslint-plugin-ts';
 import tsPlugin from '@typescript-eslint/eslint-plugin';
 import tsParser from '@typescript-eslint/parser';
 
-export const parserOptions = {
-	parser: tsParser,
-	parserOptions: {
-		ecmaVersion: 'latest',
-		sourceType: 'module',
-	}
-};
+import { ignoreUnusedPatterns, tsParserOptions } from './shared.js';
 
 export default [
 	{
@@ -16,7 +10,7 @@ export default [
 		files: [ '**/*.ts', '**/*.tsx' ],
 		languageOptions: {
 			parser: tsParser,
-			parserOptions,
+			parserOptions: tsParserOptions,
 		},
 		plugins: {
 			'@typescript-eslint': tsPlugin,
@@ -24,10 +18,10 @@ export default [
 		},
 		rules: {
 			'no-unused-vars': 'off',
-			'@typescript-eslint/no-unused-vars': [ 'warn', { argsIgnorePattern: '^_' } ],
 			'@typescript-eslint/no-explicit-any': 'off',
 			'@typescript-eslint/no-non-null-assertion': 'off',
 			'@typescript-eslint/no-inferrable-types': [ 'warn', { ignoreParameters: false, ignoreProperties: false } ],
+			'@typescript-eslint/no-unused-vars': [ 'warn', ignoreUnusedPatterns ],
 			'@stylistic/ts/type-annotation-spacing': [ 'warn', { after: true } ],
 		}
 	}

@@ -1,6 +1,7 @@
 import globals from 'globals';
 
 import customRules from '../rules.js';
+import { ignoreUnusedPatterns } from './shared.js';
 
 export default [
 	{
@@ -43,7 +44,7 @@ export default [
 			'no-multiple-empty-lines': [ 'warn', { max: 1, maxBOF: 0, maxEOF: 1 } ],
 			'no-param-reassign': 'warn',
 			'no-trailing-spaces': 'warn',
-			'no-unused-vars': 'warn',
+			'no-unused-vars': [ 'warn', ignoreUnusedPatterns ],
 			'no-var': 'warn',
 			'no-whitespace-before-property': 'warn',
 			'object-curly-spacing': [ 'warn', 'always' ],
