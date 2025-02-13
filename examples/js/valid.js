@@ -11,6 +11,8 @@ import test from './javascript.js';
 
 function myFunction( param1, param2 ) {
 
+	param1 = 'reassignment allowed';
+
 	console.log( 'This is a test function' );
 	if ( param1 === param2 ) {
 		console.log( 'Parameters are equal' );

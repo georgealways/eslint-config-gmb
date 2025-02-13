@@ -42,7 +42,7 @@ export default [
 			'no-mixed-spaces-and-tabs': [ 'warn', 'smart-tabs' ],
 			'no-multi-spaces': 'warn',
 			'no-multiple-empty-lines': [ 'warn', { max: 1, maxBOF: 0, maxEOF: 1 } ],
-			'no-param-reassign': 'warn',
+			'no-param-reassign': 'off',
 			'no-trailing-spaces': 'warn',
 			'no-unused-vars': [ 'warn', ignoreUnusedPatterns ],
 			'no-var': 'warn',
