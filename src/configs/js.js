@@ -1,3 +1,4 @@
+import stylistic from '@stylistic/eslint-plugin';
 import globals from 'globals';
 
 import customRules from '../rules.js';
@@ -13,11 +14,14 @@ export default [
 			globals: globals.browser,
 		},
 		plugins: {
-			'@gmb': customRules
+			'@gmb': customRules,
+			'@stylistic': stylistic,
 		},
 		rules: {
 			'@gmb/symmetric-newlines': 'warn',
 			'@gmb/comma-dangle-single': 'warn',
+			'@stylistic/no-mixed-spaces-and-tabs': 'warn',
+			'@stylistic/quotes': [ 'warn', 'single', { avoidEscape: true } ],
 			'array-bracket-spacing': [ 'warn', 'always' ],
 			'arrow-parens': [ 'warn', 'as-needed' ],
 			'arrow-spacing': 'warn',
@@ -39,7 +43,6 @@ export default [
 			'no-extra-parens': 'warn',
 			'no-extra-semi': 'warn',
 			'no-inner-declarations': 'off',
-			'no-mixed-spaces-and-tabs': [ 'warn', 'smart-tabs' ],
 			'no-multi-spaces': 'warn',
 			'no-multiple-empty-lines': [ 'warn', { max: 1, maxBOF: 0, maxEOF: 1 } ],
 			'no-param-reassign': 'off',
@@ -49,7 +52,6 @@ export default [
 			'no-whitespace-before-property': 'warn',
 			'object-curly-spacing': [ 'warn', 'always' ],
 			'object-shorthand': [ 'warn', 'properties' ],
-			'quotes': [ 'warn', 'single', { avoidEscape: true } ],
 			'semi-spacing': 'warn',
 			'semi': [ 'warn', 'always' ],
 			'sort-imports': [ 'warn', { ignoreDeclarationSort: true } ], // mainly handled by imports.js

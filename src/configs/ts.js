@@ -1,4 +1,4 @@
-import stylisticTs from '@stylistic/eslint-plugin-ts';
+import stylistic from '@stylistic/eslint-plugin';
 import tsPlugin from '@typescript-eslint/eslint-plugin';
 import tsParser from '@typescript-eslint/parser';
 
@@ -14,7 +14,7 @@ export default [
 		},
 		plugins: {
 			'@typescript-eslint': tsPlugin,
-			'@stylistic/ts': stylisticTs,
+			'@stylistic': stylistic,
 		},
 		rules: {
 			'no-unused-vars': 'off',
@@ -23,7 +23,7 @@ export default [
 			'@typescript-eslint/no-non-null-assertion': 'off',
 			'@typescript-eslint/no-inferrable-types': [ 'warn', { ignoreParameters: false, ignoreProperties: false } ],
 			'@typescript-eslint/no-unused-vars': [ 'warn', ignoreUnusedPatterns ],
-			'@stylistic/ts/type-annotation-spacing': [ 'warn', { after: true } ],
+			'@stylistic/type-annotation-spacing': [ 'warn', { after: true } ],
 		}
 	}
 ];
