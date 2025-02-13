@@ -5,7 +5,7 @@ set -e
 trap cleanup EXIT
 
 cleanup() {
-  rm -f "$FILE_INVALID_TEST"
+	rm -f "$FILE_INVALID_TEST"
 }
 
 FILE_INVALID="${1:-path/to/fileA.js}"
@@ -16,13 +16,13 @@ FILE_VALID="${2:-path/to/fileB.js}"
 cp "$FILE_INVALID" "$FILE_INVALID_TEST"
 
 # 2. Run eslint --fix on the backup of file A
-npx eslint --no-ignore --fix "$FILE_INVALID_TEST"
+npx eslint --fix "$FILE_INVALID_TEST"
 
 # 3. Compare the (fixed) copy of file A to the backup of file B
 if ! diff -q "$FILE_INVALID_TEST" "$FILE_VALID" &>/dev/null; then
-  echo "FAIL: After eslint --fix, the files differ."
+	echo "FAIL: After eslint --fix, the files differ."
 	diff "$FILE_INVALID_TEST" "$FILE_VALID"
-  exit 1
+	exit 1
 fi
 
 echo "PASS: $FILE_INVALID and $FILE_VALID are identical after eslint --fix."

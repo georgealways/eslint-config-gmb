@@ -6,7 +6,7 @@
 <script lang="ts" setup>
 import { ref } from 'vue';
 
-const test = ref( 'test' );
+const test = ref( 'test');
 </script>
 
 <style scoped>

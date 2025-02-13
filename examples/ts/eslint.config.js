@@ -1,7 +1,1 @@
-import base, { ts } from 'eslint-config-gmb';
-
-export default [
-	...base,
-	...ts,
-	{ ignores: [ 'invalid*' ] },
-];
+export { ts as default } from 'eslint-config-gmb';
