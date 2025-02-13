@@ -1,0 +1,18 @@
+{
+  "editor.defaultFormatter": "dbaeumer.vscode-eslint",
+  "editor.formatOnSave": false,
+  "editor.insertSpaces": false,
+  "editor.detectIndentation": false,
+  "eslint.format.enable": true,
+  "editor.renderWhitespace": "all",
+  "files.insertFinalNewline": true,
+  "[json][jsonc]": {
+    "editor.defaultFormatter": "vscode.json-language-features",
+    "editor.insertSpaces": true,
+    "editor.tabSize": 2,
+  },
+  "files.exclude": {
+    "**/package-lock.json": true,
+    "**/node_modules": true,
+  },
+}
