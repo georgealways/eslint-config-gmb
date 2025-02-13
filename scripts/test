@@ -6,6 +6,7 @@ SCRIPT_DIR="$(cd "$(dirname "$0")" && pwd)"
 
 for dir in js ts vue; do
 	pushd "$SCRIPT_DIR/../examples/$dir" > /dev/null
+	echo "Testing examples/$dir"
 	npx eslint "valid.$dir" --max-warnings 0
 	"$SCRIPT_DIR/compare" "invalid.$dir" "valid.$dir"
 	popd > /dev/null

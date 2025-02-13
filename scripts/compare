@@ -21,6 +21,7 @@ npx eslint --no-ignore --fix "$FILE_INVALID_TEST"
 # 3. Compare the (fixed) copy of file A to the backup of file B
 if ! diff -q "$FILE_INVALID_TEST" "$FILE_VALID" &>/dev/null; then
   echo "FAIL: After eslint --fix, the files differ."
+	diff "$FILE_INVALID_TEST" "$FILE_VALID"
   exit 1
 fi
 
