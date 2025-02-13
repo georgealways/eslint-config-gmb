@@ -7,6 +7,8 @@ import config, {
 
 function myFunction( param1: string, param2: string ) {
 
+	param1 = 'reassignment allowed';
+
 	console.log( 'This is a test function' );
 	if ( param1 === param2 ) {
 		console.log( 'Parameters are equal' );

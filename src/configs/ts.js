@@ -19,6 +19,7 @@ export default [
 		rules: {
 			'no-unused-vars': 'off',
 			'@typescript-eslint/no-explicit-any': 'off',
+			'@typescript-eslint/no-param-reassign': 'off',
 			'@typescript-eslint/no-non-null-assertion': 'off',
 			'@typescript-eslint/no-inferrable-types': [ 'warn', { ignoreParameters: false, ignoreProperties: false } ],
 			'@typescript-eslint/no-unused-vars': [ 'warn', ignoreUnusedPatterns ],
