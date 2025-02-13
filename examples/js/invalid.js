@@ -13,7 +13,7 @@ function myFunction(param1, param2 ) {
 
 	param1 = 'reassignment allowed';
 
-	console.log( 'This is a test function' );
+	console.log( "no double quotes" );
 	if ( param1=== param2 ) {
 		console.log( 'Parameters are equal' );
 	} else {
