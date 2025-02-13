@@ -21,6 +21,7 @@ export default [
 			'@gmb/symmetric-newlines': 'warn',
 			'@gmb/comma-dangle-single': 'warn',
 			'@stylistic/no-mixed-spaces-and-tabs': 'warn',
+			// todo: avoidEscape isn't working
 			'@stylistic/quotes': [ 'warn', 'single', { avoidEscape: true } ],
 			'array-bracket-spacing': [ 'warn', 'always' ],
 			'arrow-parens': [ 'warn', 'as-needed' ],
