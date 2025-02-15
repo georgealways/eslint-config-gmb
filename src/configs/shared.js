@@ -4,6 +4,7 @@ export const ignoreUnusedPatterns = {
 	caughtErrorsIgnorePattern: '_',
 	destructuredArrayIgnorePattern: '_',
 	argsIgnorePattern: '_',
+	ignoreRestSiblings: true,
 };
 
 export const tsParserOptions = {
