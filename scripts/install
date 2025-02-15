@@ -1,0 +1,12 @@
+#!/bin/sh
+
+set -e
+
+SCRIPT_DIR="$(cd "$(dirname "$0")" && pwd)"
+
+for dir in src examples/*; do
+	pushd "$SCRIPT_DIR/../$dir" > /dev/null
+	echo "\033[1mInstalling $dir\033[0m"
+	npm install
+	popd > /dev/null
+done

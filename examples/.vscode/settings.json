@@ -12,7 +12,11 @@
     "editor.tabSize": 2,
   },
   "files.exclude": {
-    "**/package-lock.json": true,
     "**/node_modules": true,
+    "**/package-lock.json": true,
   },
+  "explorer.fileNesting.enabled": true,
+  "explorer.fileNesting.patterns": {
+    "package.json": "package-lock.json, index.html, pnpm*, .yarnrc*, yarn*, .prettier*, prettier*, .editorconfig, .git*, env.d.ts, README*, tsconfig*, vite.config*"
+  }
 }

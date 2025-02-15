@@ -41,13 +41,19 @@ ts.forEach( config => {
 
 	if ( !config.plugins ) return;
 
-	// eslint-disable-next-line no-unused-vars
+	// strip out @typescript-eslint
 	const { '@typescript-eslint': _, ...withoutTsEsLint } = config.plugins;
 	const newConfig = { ...config, plugins: withoutTsEsLint };
 
 	if ( config.name ) {
 		newConfig.name = config.name.replace( 'ts', 'tsVue' );
 	}
+
+	const RE = /ts$/g;
+	config.files.forEach( file => {
+		if ( !RE.test( file ) ) return;
+		newConfig.files.push( file.replace( RE, 'vue' ) );
+	} );
 
 	tsVue.push( newConfig );
 
@@ -68,7 +74,7 @@ export default defineConfigWithVueTs(
 	pluginVue.configs[ 'flat/essential' ],
 	vueTsConfigs.recommended,
 
+	tsVue,
 	vue,
-	tsVue
 
 );

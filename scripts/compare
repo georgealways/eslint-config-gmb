@@ -18,11 +18,13 @@ cp "$FILE_INVALID" "$FILE_INVALID_TEST"
 # 2. Run eslint --fix on the backup of file A
 npx eslint --fix "$FILE_INVALID_TEST"
 
+echo ""
+
 # 3. Compare the (fixed) copy of file A to the backup of file B
 if ! diff -q "$FILE_INVALID_TEST" "$FILE_VALID" &>/dev/null; then
-	echo "FAIL: After eslint --fix, the files differ."
-	diff "$FILE_INVALID_TEST" "$FILE_VALID"
+	echo "\033[1;31mFAIL:\033[0m After eslint --fix, the files differ."
+	diff "$FILE_INVALID_TEST" "$FILE_VALID" -y --color
 	exit 1
 fi
 
-echo "PASS: $FILE_INVALID and $FILE_VALID are identical after eslint --fix."
+echo "\033[1;32mPASS:\033[0m $FILE_INVALID and $FILE_VALID are identical after eslint --fix."

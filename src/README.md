@@ -124,10 +124,24 @@ const arr3 = [
 ```
 
 
-## Repository Structure
+## Development
+
+### Installation
+
+This script goes through "subpackages" and calls `npm install`.
+
+```sh
+scripts/install
+```
+
+### Workspace
+
+Use `eslint-config-gmb.code-workspace` to open the repository in VS Code. This will open all subpackages in the same workspace, and allow them to use their own `.vscode` settings. 
+
+### Repository Structure
 
 - **`src/`** contains the actual config package. This is what is published to npm.
 - `src/configs/` contains the exported configurations.
 - `src/rules/` contains custom rules used in those configs.
-- `examples/` demonstrates config behavior in different contexts. Also used for testing.
+- `examples/` demonstrates config behavior in different contexts. Used for testing.
 

@@ -1,8 +1,8 @@
 /* eslint-disable no-unused-vars */
 import blah from '@eslint/js';
 import config, {
-	base,
 	imports,
+	js,
 	ts,
 	vue,
 } from '../eslint.config.js';

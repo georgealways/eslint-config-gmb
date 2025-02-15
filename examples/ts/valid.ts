@@ -1,8 +1,8 @@
 /* eslint-disable @typescript-eslint/no-unused-vars */
 
 import config, {
-	base,
 	imports,
+	js,
 } from 'eslint-config-gmb';
 
 function myFunction( param1: string, param2: string ) {

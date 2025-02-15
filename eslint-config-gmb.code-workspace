@@ -1,6 +1,10 @@
 {
 	"folders": [
 		{
+			"path": ".",
+			"name": "root"
+		},
+		{
 			"path": "src"
 		},
 		{
@@ -8,7 +12,6 @@
 		},
 		{
 			"path": "examples"
-		},
-	],
-	"settings": {}
+		}
+	]
 }
