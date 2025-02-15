@@ -21,8 +21,8 @@ function myFunction( param1: string, param2: string ) {
 	}
 
 	const obj = { a: 1, b: 2 };
-	for ( const key in obj ) {
-		console.log( key, obj[ key ] );
+	for ( const [ key, value ] of Object.entries( obj ) ) {
+		console.log( key, value );
 	}
 
 }
