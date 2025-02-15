@@ -28,7 +28,16 @@ const vue = [
 				} ]
 			} ],
 			'vue/valid-template-root': 'off',
-			'vue/html-indent': [ 'warn', 'tab' ]
+			'vue/html-indent': [ 'warn', 'tab' ],
+			'vue/html-self-closing': [ 'warn', {
+				html: {
+					void: 'always',
+					normal: 'never',
+					component: 'always',
+				},
+				svg: 'always',
+				math: 'always'
+			} ]
 		}
 	}
 ];
