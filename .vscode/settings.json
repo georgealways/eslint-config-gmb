@@ -3,6 +3,5 @@
     "examples": true,
     "scripts": true,
     "src": true,
-    "README.md": true
   }
 }
