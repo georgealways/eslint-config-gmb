@@ -27,7 +27,8 @@ const vue = [
 					message: 'Use @ instead of relative paths.',
 				} ]
 			} ],
-			'vue/valid-template-root': 'off'
+			'vue/valid-template-root': 'off',
+			'vue/html-indent': [ 'warn', 'tab' ]
 		}
 	}
 ];
@@ -71,7 +72,7 @@ export default defineConfigWithVueTs(
 		ignores: [ '**/dist/**', '**/dist-ssr/**', '**/coverage/**' ],
 	},
 
-	pluginVue.configs[ 'flat/essential' ],
+	pluginVue.configs[ 'flat/recommended' ],
 	vueTsConfigs.recommended,
 
 	tsVue,
