@@ -8,6 +8,7 @@ export default [
 	{
 		name: 'eslint-config-gmb/js',
 		files: [ '**/*.{js,jsx,ts,tsx,vue}' ],
+		ignores: [ '**/*.d.ts' ],
 		languageOptions: {
 			ecmaVersion: 'latest',
 			sourceType: 'module',

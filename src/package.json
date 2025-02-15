@@ -6,6 +6,7 @@
   "author": "George Michael Brower",
   "license": "MIT",
   "description": "georgealways' ESLint Config",
+  "types": "types/eslint.config.d.ts",
   "dependencies": {
     "@eslint/js": "^9.12.0",
     "@stylistic/eslint-plugin": "^3.1.0",
@@ -26,18 +27,21 @@
   "scripts": {
     "lint": "eslint . --fix",
     "test": "../scripts/test",
-    "test:watch": "onchange '../src/**/*.{js,json}' '../examples/**/*.{js,ts,vue}' -e '../examples/**/*.test.{js,ts,vue}' -i -v -- npm test",
-    "preversion": "npm test",
-    "prepublishOnly": "npm test"
+    "preversion": "npm run types && npm test",
+    "prepublishOnly": "npm run types && npm test",
+    "types": "tsc eslint.config.js --declaration --allowJs --emitDeclarationOnly --skipLibCheck --outDir types"
   },
   "files": [
     "eslint.config.js",
     "configs",
     "rules",
     "rules.js",
-    "README.md"
+    "README.md",
+    "types"
   ],
   "devDependencies": {
-    "onchange": "^7.1.0"
+    "@types/eslint__js": "^8.42.3",
+    "onchange": "^7.1.0",
+    "typescript": "^5.7.3"
   }
 }
