@@ -18,4 +18,4 @@ for dir in vue ts js; do
 	popd > /dev/null
 done
 
-echo "✅ All tests passed!"
+echo "✔ All tests passed!"
