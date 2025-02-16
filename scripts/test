@@ -5,7 +5,7 @@ set -e
 SCRIPT_DIR="$(cd "$(dirname "$0")" && pwd)"
 
 echo ""
-echo "📋 Testing Examples..."
+echo "📋 Testing examples..."
 echo ""
 
 for dir in vue ts js; do
