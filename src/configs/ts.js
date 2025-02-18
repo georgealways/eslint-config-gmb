@@ -7,7 +7,7 @@ import { ignoreUnusedPatterns, tsParserOptions } from './shared.js';
 export default [
 	{
 		name: 'eslint-config-gmb/ts',
-		files: [ '**/*.ts', '**/*.tsx' ],
+		files: [ '**/*.{ts,tsx}' ],
 		languageOptions: {
 			parser: tsParser,
 			parserOptions: tsParserOptions,

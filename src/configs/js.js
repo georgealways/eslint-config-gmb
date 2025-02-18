@@ -7,7 +7,7 @@ import { ignoreUnusedPatterns } from './shared.js';
 export default [
 	{
 		name: 'eslint-config-gmb/js',
-		files: [ '**/*.{js,jsx,ts,tsx,vue}' ],
+		files: [ '**/*.{js,mjs,cjs,jsx,ts,tsx,vue}' ],
 		ignores: [ '**/*.d.ts' ],
 		languageOptions: {
 			ecmaVersion: 'latest',
@@ -19,7 +19,6 @@ export default [
 			'@stylistic': stylistic,
 		},
 		rules: {
-
 			'eqeqeq': [ 'warn', 'always' ],
 			'no-cond-assign': 'off',
 			'no-empty': 'warn',
@@ -29,11 +28,9 @@ export default [
 			'no-var': 'warn',
 			'object-shorthand': [ 'warn', 'properties' ],
 			'sort-imports': [ 'warn', { ignoreDeclarationSort: true } ],
-
 			// Custom rules
 			'@gmb/symmetric-newlines': 'warn',
 			'@gmb/comma-dangle-single': 'warn',
-
 			// Stylistic rules
 			'@stylistic/array-bracket-spacing': [ 'warn', 'always' ],
 			'@stylistic/arrow-parens': [ 'warn', 'as-needed' ],
@@ -65,7 +62,6 @@ export default [
 			'@stylistic/space-before-function-paren': [ 'warn', 'never' ],
 			'@stylistic/space-in-parens': [ 'warn', 'always', { exceptions: [ 'empty' ] } ],
 			'@stylistic/space-infix-ops': 'warn',
-
 		}
 	}
 ];
