@@ -16,9 +16,9 @@ function myFunction( param1: string, param2: string ) {
 		console.log( 'Parameters are not equal' );
 	}
 
-	const obj = { a: 1,b: 2 };
-	for ( const key in obj) {
-		console.log( key, obj[ key ] );
+	const obj ={ a:1,b: 2 };
+	for ( const [key, value ]of Object.entries( obj )) {
+		console.log( key, value )
 	}
 
 }
@@ -44,7 +44,7 @@ const obj2 = {
 	a: 1,
 	b: 2,
 	c: {
-		d: 4,
+    d: 4,
 		e: 5,
 	}
 };

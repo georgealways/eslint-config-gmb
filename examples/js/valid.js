@@ -1,19 +1,14 @@
 /* eslint-disable no-unused-vars */
-import blah from '@eslint/js';
-
 import config, {
 	imports,
 	js,
-	ts,
-	vue,
-} from '../eslint.config.js';
-import test from './javascript.js';
+} from 'eslint-config-gmb';
 
 function myFunction( param1, param2 ) {
 
 	param1 = 'reassignment allowed';
 
-	console.log( 'no double quotes' );
+	console.log( 'This is a test function' );
 	if ( param1 === param2 ) {
 		console.log( 'Parameters are equal' );
 	} else {
@@ -21,13 +16,13 @@ function myFunction( param1, param2 ) {
 	}
 
 	const obj = { a: 1, b: 2 };
-	for ( const key in obj ) {
-		console.log( key, obj[ key ] );
+	for ( const [ key, value ] of Object.entries( obj ) ) {
+		console.log( key, value );
 	}
 
 }
 
-myFunction( 1, '1' );
+myFunction( '1', '1' );
 
 const arrowFunc = ( arg1, arg2 ) => {
 	return arg1 + arg2;

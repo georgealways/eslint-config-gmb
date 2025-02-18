@@ -1,40 +1,34 @@
 /* eslint-disable no-unused-vars */
-import blah from '@eslint/js';
 import config, {
-	imports,
 	js,
-	ts,
-	vue,
-} from '../eslint.config.js';
+	imports,
+} from 'eslint-config-gmb';
 
-import test from './javascript.js';
+function myFunction( param1, param2 ) {
 
-function myFunction(param1, param2 ) {
+	param1 = "reassignment allowed";
 
-	param1 = 'reassignment allowed';
-
-	console.log( "no double quotes" );
-	if ( param1=== param2 ) {
-		console.log( 'Parameters are equal' );
+	console.log( 'This is a test function' );
+	if ( param1 ===  param2 ) {
+		console.log('Parameters are equal' );
 	} else {
 		console.log( 'Parameters are not equal' );
 	}
 
-	const obj = { a:1, b: 2 };
-	for ( const key in obj ) {
-		console.log( key,obj[ key ] );
-
+	const obj ={ a:1,b: 2 };
+	for ( const [key, value ]of Object.entries( obj )) {
+		console.log( key, value )
 	}
 
 }
 
-myFunction( 1, '1' );
+myFunction( '1', '1');
 
 const arrowFunc = ( arg1, arg2 ) => {
 	return arg1 + arg2;
 };
 
-const arrowFunc1Param = arg => {
+const arrowFunc1Param = ( arg )=> {
 	const x = arg;
 	return x;
 };
@@ -49,10 +43,10 @@ const obj2 = {
 	a: 1,
 	b: 2,
 	c: {
-		d: 4,
+    d: 4,
 		e: 5,
 	}
 };
 
-const shorthand = 'test';
-const obj3 = { shorthand };
+const shorthand ='test';
+const obj3 = { shorthand  };
