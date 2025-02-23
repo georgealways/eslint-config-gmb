@@ -29,7 +29,7 @@ function myFunction( param1: string, param2: string ) {
 
 myFunction( '1', '1');
 
-const arrowFunc = ( arg1:number, arg2: number ): number => {
+const arrowFunc = ( arg1:number, arg2 : number ) :number => {
 	return arg1 + arg2;
 };
 
@@ -74,6 +74,9 @@ const obj3 = { shorthand  };
 	<main>
 		<TheWelcome />
 	</main>
+
+	<div>single line</div>
+
 </template>
 
 <style scoped>

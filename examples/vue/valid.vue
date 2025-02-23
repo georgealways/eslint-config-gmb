@@ -76,6 +76,8 @@ const obj3 = { shorthand };
 	<main>
 		<TheWelcome />
 	</main>
+
+	<div>single line</div>
 </template>
 
 <style scoped>

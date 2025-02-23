@@ -3,8 +3,7 @@ import pluginVue from 'eslint-plugin-vue';
 import vueScopedCss from 'eslint-plugin-vue-scoped-css';
 import vueParser from 'vue-eslint-parser';
 
-import { tsParserOptions } from './shared.js';
-import ts from './ts.js';
+import { tsParserOptions, tsRules } from './shared.js';
 
 const vue = [
 	{
@@ -21,12 +20,18 @@ const vue = [
 			'vue-scoped-css': vueScopedCss
 		},
 		rules: {
+			...tsRules,
 			'no-restricted-imports': [ 'warn', {
 				patterns: [ {
 					group: [ './', '../' ],
 					message: 'Use @ instead of relative paths.',
 				} ]
 			} ],
+			'vue/max-attributes-per-line': [ 'warn', {
+				singleline: 3,
+				multiline: 1,
+			} ],
+			'vue/singleline-html-element-content-newline': 'off',
 			'vue/valid-template-root': 'off',
 			'vue/html-indent': [ 'warn', 'tab' ],
 			'vue/html-self-closing': [ 'warn', {
@@ -41,33 +46,6 @@ const vue = [
 		}
 	}
 ];
-
-// Delete @typescript-eslint from plugins and re-export.
-// This is so we can combine the TS and Vue configs without eslint complaining.
-// Wasn't the point of flat config to make these composable?
-const tsVue = [];
-
-ts.forEach( config => {
-
-	if ( !config.plugins ) return;
-
-	// strip out @typescript-eslint
-	const { '@typescript-eslint': _, ...withoutTsEsLint } = config.plugins;
-	const newConfig = { ...config, plugins: withoutTsEsLint };
-
-	if ( config.name ) {
-		newConfig.name = config.name.replace( 'ts', 'tsVue' );
-	}
-
-	const RE = /ts$/g;
-	config.files.forEach( file => {
-		if ( !RE.test( file ) ) return;
-		newConfig.files.push( file.replace( RE, 'vue' ) );
-	} );
-
-	tsVue.push( newConfig );
-
-} );
 
 export default defineConfigWithVueTs(
 
@@ -84,7 +62,6 @@ export default defineConfigWithVueTs(
 	pluginVue.configs[ 'flat/recommended' ],
 	vueTsConfigs.recommended,
 
-	tsVue,
 	vue,
 
 );

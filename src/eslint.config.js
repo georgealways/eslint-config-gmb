@@ -17,7 +17,7 @@ const ts = [
 ];
 
 const vue = [
-	...ts,
+	...js,
 	..._vue,
 ];
 
