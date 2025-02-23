@@ -60,6 +60,8 @@ export default defineConfigWithVueTs(
 	},
 
 	pluginVue.configs[ 'flat/recommended' ],
+	vueScopedCss.configs[ 'flat/recommended' ],
+
 	vueTsConfigs.recommended,
 
 	vue,
