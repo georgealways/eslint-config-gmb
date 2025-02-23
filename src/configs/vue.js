@@ -8,7 +8,7 @@ import { tsParserOptions, tsRules } from './shared.js';
 const vue = [
 	{
 		name: 'eslint-config-gmb/vue',
-		files: [ '**/*.vue' ],
+		files: [ '**/*.{vue,ts}' ],
 		languageOptions: {
 			parser: vueParser,
 			parserOptions: {
