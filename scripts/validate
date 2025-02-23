@@ -1,6 +1,6 @@
 #!/bin/sh
 
-# This script ensures that valid.* files pass the linter.
+# Ensures that files in examples/ named "valid.*" pass the linter.
 
 set -e
 

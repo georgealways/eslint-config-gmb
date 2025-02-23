@@ -1,6 +1,6 @@
 #!/bin/sh
 
-# This script tests whether eslint can --fix one file to match another.
+# Tests whether eslint can --fix one file to match another.
 
 set -e
 trap cleanup EXIT

@@ -1,5 +1,7 @@
 #!/bin/sh
 
+# Installs dependencies for all packages.
+
 set -e
 
 SCRIPT_DIR="$(cd "$(dirname "$0")" && pwd)"
