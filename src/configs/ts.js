@@ -16,6 +16,7 @@ export default [
 			'@typescript-eslint': tsPlugin,
 			'@stylistic': stylistic,
 		},
+		// Rules are shared with the Vue config
 		rules: tsRules
 	}
 ];
