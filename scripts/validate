@@ -1,0 +1,16 @@
+#!/bin/sh
+
+# This script ensures that valid.* files pass the linter.
+
+set -e
+
+verify() {
+	"$@"
+	result=$?
+	if [ $result -eq 0 ]; then
+		echo "\033[32m✔\033[0m $*"
+	fi
+	return $result
+}
+
+verify npx eslint "**/valid.*" --max-warnings 0

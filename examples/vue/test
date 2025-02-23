@@ -1,0 +1,9 @@
+#!/bin/sh
+
+set -e
+
+../../scripts/validate
+../../scripts/compare "invalid.vue" "valid.vue"
+
+# ensure that plain TS files are linted here as well
+../../scripts/compare "invalid.ts" "valid.ts"

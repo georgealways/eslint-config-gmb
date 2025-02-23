@@ -1,21 +1,20 @@
 #!/bin/sh
 
+# This script runs the tests for all examples.
+
 set -e
 
-SCRIPT_DIR="$(cd "$(dirname "$0")" && pwd)"
+BASE_DIR="$(dirname "$0")/../examples"
 
-echo ""
-echo "📋 Testing examples..."
-echo ""
+echo
 
 for dir in vue ts js; do
-	pushd "$SCRIPT_DIR/../examples/$dir" > /dev/null
-	echo "\033[1mValidating examples/$dir/valid.$dir\033[0m"
-	echo "\033[0;36meslint examples/$dir/valid.* --max-warnings 0\033[0m"
-	npx eslint "**/valid.*" --max-warnings 0
-	"$SCRIPT_DIR/compare" "invalid.$dir" "valid.$dir"
-	echo ""
+	echo "Testing \033[1mexamples/$dir\033[0m"
+	pushd "$BASE_DIR/$dir" > /dev/null
+	./test
 	popd > /dev/null
+	echo
 done
 
-echo "✔ All tests passed!"
+echo "All tests passed! 🎉"
+echo
