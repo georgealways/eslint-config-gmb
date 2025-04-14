@@ -1,9 +1,9 @@
 /* eslint-disable @typescript-eslint/no-unused-vars */
 
-import config, {
-	imports,
-	js,
-} from 'eslint-config-gmb';
+import { Certificate } from 'crypto';
+import config, { imports, js } from 'eslint-config-gmb';
+
+import type { KeyType } from 'crypto';
 
 function myFunction( param1: string, param2: string ) {
 

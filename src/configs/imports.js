@@ -20,6 +20,8 @@ export default [ {
 			groups,
 			alphabetize: { order: 'asc', caseInsensitive: true },
 			'newlines-between': 'always',
-		} ]
+		} ],
+		'import/consistent-type-specifier-style': [ 'warn', 'prefer-top-level' ],
+		'import/no-duplicates': 'warn'
 	}
 } ];
