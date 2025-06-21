@@ -20,9 +20,9 @@ cp "$FILE_INVALID" "$FILE_INVALID_TEST"
 npx eslint --fix "$FILE_INVALID_TEST"
 
 # Compare the (fixed) copy of file A to the backup of file B
-if ! diff -q "$FILE_INVALID_TEST" "$FILE_VALID" &>/dev/null; then
+if ! git diff --no-index --quiet "$FILE_INVALID_TEST" "$FILE_VALID"; then
 	echo "\033[1;31m✕\033[0m After eslint --fix, the files differ."
-	diff "$FILE_INVALID_TEST" "$FILE_VALID" -y --color
+	git diff --no-index "$FILE_INVALID_TEST" "$FILE_VALID"
 	exit 1
 fi
 

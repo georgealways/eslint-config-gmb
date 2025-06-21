@@ -4,6 +4,14 @@ import config, {
 	imports,
 } from 'eslint-config-gmb';
 
+import { a, b, c, d, 
+	e, f,
+	g,
+	h, i
+} from 'module1';
+
+import { veryLongImportName, veryLongImportName2, veryLongImportName3, veryLongImportName4, veryLongImportName5, veryLongImportName6, veryLongImportName7, veryLongImportName8, veryLongImportName9 } from 'module2';
+
 function myFunction( param1, param2 ) {
 
 	param1 = "reassignment allowed";

@@ -12,6 +12,7 @@
 
 - "Symmetric" newlines within blocks.
 - Trailing commas in multiline collections (with exceptions).
+- Single-line imports unless they exceed a given length.
 
 ## Installation
 
@@ -123,6 +124,33 @@ const arr3 = [
 ];
 ```
 
+### Import Line Length
+
+The `import-line-length` rule ensures that import statements are not longer than a given length.
+
+```js
+// Invalid
+import { a, b, c, d, 
+	e, f,
+	g,
+	h, i
+} from 'module1';
+import { veryLongImportName, veryLongImportName2, veryLongImportName3, veryLongImportName4, veryLongImportName5, veryLongImportName6, veryLongImportName7, veryLongImportName8, veryLongImportName9 } from 'module2';
+
+// Valid
+import { a, b, c, d, e, f, g, h, i } from 'module1';
+import {
+	veryLongImportName,
+	veryLongImportName2,
+	veryLongImportName3,
+	veryLongImportName4,
+	veryLongImportName5,
+	veryLongImportName6,
+	veryLongImportName7,
+	veryLongImportName8,
+	veryLongImportName9
+} from 'module2';
+```
 
 ## Development
 
