@@ -31,7 +31,7 @@ export default [
 			// Custom rules
 			'@gmb/symmetric-newlines': 'warn',
 			'@gmb/comma-dangle-single': 'warn',
-			'@gmb/import-line-length': [ 'warn', { maxLength: 120 } ],
+			'@gmb/import-line-length': [ 'warn', { maxLength: 100 } ],
 			// Stylistic rules
 			'@stylistic/array-bracket-spacing': [ 'warn', 'always' ],
 			'@stylistic/arrow-parens': [ 'warn', 'as-needed' ],
